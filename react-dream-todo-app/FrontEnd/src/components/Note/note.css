@@ -1,0 +1,81 @@
+.note {
+  padding: 1.5rem 10px;
+  background-color: #21212d;
+  width: 63%;
+}
+.note:hover {
+  opacity: 85% !important;
+  box-shadow: 0px 3px 6px rgba(105, 83, 135, 0.396) !important;
+}
+.note_container {
+  display: flex;
+  justify-content: space-between;
+}
+.note_text_container {
+  display: flex;
+  flex: 0.7;
+  align-items: center;
+}
+.note_title {
+  font-size: large;
+  font-weight: 700;
+  margin-left: 0.7rem;
+}
+.note_description {
+  font-size: small;
+  font-weight: 400;
+  margin: 1rem 2.5rem;
+}
+.note_button_container {
+  display: flex;
+  flex: 0.3;
+  align-items: center;
+  justify-content: flex-end;
+}
+.icon_container {
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.note_update:hover,
+.note_sms:hover,
+.note_email:hover,
+.note_description:hover {
+  color: blueviolet;
+}
+.note_delete:hover {
+  color: red;
+}
+.note_done {
+  background-color: rgb(23, 223, 33);
+}
+.done {
+  text-decoration: line-through;
+}
+.note_input_container {
+  display: flex;
+  flex-direction: column;
+}
+.note_checkbox {
+  cursor: pointer;
+}
+.input_box {
+  padding: 7px 5px;
+  margin: 1rem 1rem;
+  border-radius: 8px;
+}
+.note_form_button {
+  padding: 7px;
+  border: none;
+  color: white;
+  background-color: blueviolet;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: small;
+  cursor: pointer;
+  margin: 0rem 0.7rem;
+}

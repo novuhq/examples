@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+.refresh_button {
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: large;
+  transition: background-color 0.5s ease-in-out;
+}
+.refresh_button:hover {
+  opacity: 80%;
+  transition: all;
+}
