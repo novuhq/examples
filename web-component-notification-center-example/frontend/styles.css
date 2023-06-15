@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+:root {
+    --pink: 253 80 51;
+    --orange: 253 78 54;
+}
+
+
+
+.header {
+    color: azure;
+    background: #1b1b1b;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+}
+
+h1 {
+    background: linear-gradient(to right, #e02873, #fd5033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bell {
+
+    /* reset */
+    margin: auto;
+    margin-right: 0;
+    background: none;
+    font-size: initial;
+    margin: auto;
+    margin-right: 0;
+}
+
+.content {
+    color: azure;
+    background: #1b1b1b;
+    display: flex;
+    min-height: 86vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.txt {
+    position: absolute;
+    margin-top: -10rem;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+footer {
+    font-weight: 300;
+    color: azure;
+    background: #1b1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem 0;
+
+}
+
+#btn {
+    margin-top: 10rem !important;
+    border: none;
+    font-size: 26px;
+    padding: 20px 32px;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+/* #btn:hover {
+    border: none;
+    box-shadow: rgba(var(--pink, 0.5)) 0px 0px 20px 0px;
+} */
+
+#btn:active {
+    background-color: #4d9981;
+    border: none;
+}
+
+
+.input {
+    border: 1px solid #ccc;
+    font-size: 26px;
+    padding: 20px 32px;
+    border-radius: 10px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+    min-width: 600px;
+}
+
+.input:focus {
+    border-color: #4d9981;
+    outline: none;
+}
+
+/* .input:hover {
+    border: none;
+    box-shadow: rgba(var(--orange, 0.5)) 0px 0px 20px 0px;
+} */
+
+.link {
+    background: linear-gradient(to right, #fb4d37, #e02872);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.img {
+    max-height: 416px;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    margin-top: -400px;
+
+}
