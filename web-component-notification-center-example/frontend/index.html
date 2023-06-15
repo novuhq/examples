@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Web Component Bundled Version CDN -->
+    <script src="https://novu-web-component.netlify.app/index.js"></script>
+    <title>Notification Generator</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Notifications Generator</h1>
+
+        <notification-center-component style="display: inline-flex" application-identifier="<Enter your app identifier>"
+            subscriber-id="Sumit" class="bell"></notification-center-component>
+    </div>
+
+    <div class="content">
+        <!-- <p class="txt">Enter notification text and click the send button!</p> -->
+        <img class="img" src="./notification-bell.png" alt="notification bell image" srcset="">
+        <form id="form" action="#" method="post">
+            <input class="input" type="text" placeholder="Enter notification text and click the send button!" name="description">
+            <button id="btn" disabled>Send</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Proudly powered by <a class="link" href="http://www.novu.co">Novu</a></p>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+
+</html>
