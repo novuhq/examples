@@ -18,12 +18,13 @@ novuhq/examples is built on the following main stack:
 - [Angular](https://angular.io) – Javascript MVC Frameworks
 - [Vue.js](http://vuejs.org/) – Javascript UI Libraries
 - [Redux](https://redux.js.org/) – State Management Library
-- [Shell](https://en.wikipedia.org/wiki/Shell_script) – Shells
 - [redux-thunk](https://github.com/gaearon/redux-thunk) – State Management Library
 - [axios](https://github.com/mzabriskie/axios) – Javascript Utilities & Libraries
 - [nodemon](http://nodemon.io/) – node.js Application Monitoring
 - [Next.js](https://nextjs.org/) – Frameworks (Full Stack)
 - [Prettier](https://prettier.io/) – Code Review
+- [Vercel](https://vercel.com/) – Static Web Hosting
+- [Vite](https://vitejs.dev/) – JS Build Tools / JS Task Runners
 
 Full tech stack [here](/techstack.md)
 
@@ -48,12 +49,13 @@ novuhq/examples is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/3745/cb8U-gL6_400x400.jpg' alt='Angular'/> [Angular](https://angular.io) – Javascript MVC Frameworks
 - <img width='25' height='25' src='https://img.stackshare.io/service/3837/paeckCWC.png' alt='Vue.js'/> [Vue.js](http://vuejs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/4074/13142323.png' alt='Redux'/> [Redux](https://redux.js.org/) – State Management Library
-- <img width='25' height='25' src='https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png' alt='Shell'/> [Shell](https://en.wikipedia.org/wiki/Shell_script) – Shells
 - <img width='25' height='25' src='https://img.stackshare.io/service/5448/13142323.png' alt='redux-thunk'/> [redux-thunk](https://github.com/gaearon/redux-thunk) – State Management Library
 - <img width='25' height='25' src='https://img.stackshare.io/no-img-open-source.png' alt='axios'/> [axios](https://github.com/mzabriskie/axios) – Javascript Utilities & Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/5577/preview.png' alt='nodemon'/> [nodemon](http://nodemon.io/) – node.js Application Monitoring
 - <img width='25' height='25' src='https://img.stackshare.io/service/5936/nextjs.png' alt='Next.js'/> [Next.js](https://nextjs.org/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg' alt='Prettier'/> [Prettier](https://prettier.io/) – Code Review
+- <img width='25' height='25' src='https://img.stackshare.io/service/7618/bHjpwZem_400x400.png' alt='Vercel'/> [Vercel](https://vercel.com/) – Static Web Hosting
+- <img width='25' height='25' src='https://img.stackshare.io/service/21547/default_1aeac791cde11ff66cc0b20dcc6144eeb185c905.png' alt='Vite'/> [Vite](https://vitejs.dev/) – JS Build Tools / JS Task Runners
 
 Full tech stack [here](/techstack.md)
 
@@ -64,7 +66,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [novuhq/examples](https://github.com/novuhq/examples)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|71<br/>Tools used|01/05/24 <br/>Report generated|
+|74<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -197,7 +199,7 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## <img src='https://img.stackshare.io/devops.svg'/> DevOps (8)
+## <img src='https://img.stackshare.io/devops.svg'/> DevOps (9)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/8067/default_90dcb1286af7685c68df319c764b80704df1155b.png' alt='Dotenv'>
@@ -248,6 +250,14 @@ Full tech stack [here](/techstack.md)
 </td>
 
 <td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/21547/default_1aeac791cde11ff66cc0b20dcc6144eeb185c905.png' alt='Vite'>
+  <br>
+  <sub><a href="https://vitejs.dev/">Vite</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
+<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/5577/preview.png' alt='nodemon'>
   <br>
   <sub><a href="http://nodemon.io/">nodemon</a></sub>
@@ -255,7 +265,9 @@ Full tech stack [here](/techstack.md)
   <sub>v2.0.22</sub>
 </td>
 
-<td align='center'>
+</tr>
+<tr>
+  <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png' alt='npm'>
   <br>
   <sub><a href="https://www.npmjs.com/">npm</a></sub>
@@ -266,7 +278,20 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## Other (3)
+## <img src='https://img.stackshare.io/saas.svg'/> Software as a Service (SaaS) (1)
+<table><tr>
+  <td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/7618/bHjpwZem_400x400.png' alt='Vercel'>
+  <br>
+  <sub><a href="https://vercel.com/">Vercel</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
+</tr>
+</table>
+
+## Other (2)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/3643/Xrtdc94q_400x400.png' alt='Moment.js'>
@@ -274,14 +299,6 @@ Full tech stack [here](/techstack.md)
   <sub><a href="http://momentjs.com/">Moment.js</a></sub>
   <br>
   <sub>v2.29.4</sub>
-</td>
-
-<td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png' alt='Shell'>
-  <br>
-  <sub><a href="https://en.wikipedia.org/wiki/Shell_script">Shell</a></sub>
-  <br>
-  <sub></sub>
 </td>
 
 <td align='center'>
@@ -296,9 +313,9 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (46)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (48)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (46)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (48)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -325,6 +342,7 @@ Full tech stack [here](/techstack.md)
 |[body-parser](https://www.npmjs.com/body-parser)|v1.20.2|04/27/23|Sumit Saurabh |MIT|N/A|
 |[circular-json](https://www.npmjs.com/circular-json)|v0.5.9|04/27/23|Sumit Saurabh |MIT|N/A|
 |[cors](https://www.npmjs.com/cors)|v2.8.5|04/27/23|Sumit Saurabh |MIT|N/A|
+|[eslint-config-next](https://www.npmjs.com/eslint-config-next)|v13.2.3|04/20/23|unicodeveloper |N/A|N/A|
 |[eslint-plugin-vue](https://www.npmjs.com/eslint-plugin-vue)|v8.7.1|04/20/23|unicodeveloper |MIT|N/A|
 |[express](https://www.npmjs.com/express)|v4.18.2|04/27/23|Sumit Saurabh |MIT|N/A|
 |[jasmine-core](https://www.npmjs.com/jasmine-core)|v4.5.0|04/18/23|Pawan Jain |MIT|N/A|
@@ -345,6 +363,7 @@ Full tech stack [here](/techstack.md)
 |[react-scripts](https://www.npmjs.com/react-scripts)|v5.0.1|04/27/23|Sumit Saurabh |MIT|N/A|
 |[react-toastify](https://www.npmjs.com/react-toastify)|v9.1.2|04/27/23|Sumit Saurabh |MIT|N/A|
 |[tslib](https://www.npmjs.com/tslib)|v1.14.1|04/18/23|Pawan Jain |0BSD|N/A|
+|[vite](https://www.npmjs.com/vite)|v2.9.15|04/20/23|unicodeveloper |N/A|[CVE-2023-34092](https://github.com/advisories/GHSA-353f-5xf4-qw67) (High)|
 |[vue](https://www.npmjs.com/vue)|v3.2.47|04/20/23|unicodeveloper |MIT|N/A|
 |[vue-router](https://www.npmjs.com/vue-router)|v4.1.6|04/20/23|unicodeveloper |MIT|N/A|
 |[zone.js](https://www.npmjs.com/zone.js)|v0.12.0|04/18/23|Pawan Jain |MIT|N/A|
