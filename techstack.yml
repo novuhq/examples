@@ -2,11 +2,11 @@ repo_name: novuhq/examples
 report_id: 4a35c8e3346114db4e5b3bc92a919e7d
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:23:04+00:00'
-requested_by: iampearceman
+timestamp: '2024-01-11T12:18:52+00:00'
+requested_by: jainpawan21
 provider: github
 branch: main
-detected_tools_count: 71
+detected_tools_count: 74
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -266,6 +266,19 @@ tools:
   detection_source: vue-nextjs-trigger-inapp-notifications/client/package.json
   last_updated_by: unicodeveloper
   last_updated_on: 2023-04-20 17:26:15.000000000 Z
+- name: Vite
+  description: Native-ESM powered web dev build tool
+  website_url: https://vitejs.dev/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JS Build Tools / JS Task Runners
+  image_url: https://img.stackshare.io/service/21547/default_1aeac791cde11ff66cc0b20dcc6144eeb185c905.png
+  detection_source_url: https://github.com/novuhq/examples/blob/main/vue-nextjs-trigger-inapp-notifications/client/package.json
+  detection_source: vue-nextjs-trigger-inapp-notifications/client/package.json
+  last_updated_by: unicodeveloper
+  last_updated_on: 2023-04-20 17:26:15.000000000 Z
 - name: nodemon
   description: A simple monitor script for use during development of a node.js app
   website_url: http://nodemon.io/
@@ -292,6 +305,18 @@ tools:
   detection_source: vue-notification-center-example/package.json
   last_updated_by: Pawan Jain
   last_updated_on: 2023-04-18 10:41:14.000000000 Z
+- name: Vercel
+  description: It makes serverless application deployment easy
+  website_url: https://vercel.com/
+  open_source: false
+  hosted_saas: true
+  category: Application Utilities
+  sub_category: Static Web Hosting
+  image_url: https://img.stackshare.io/service/7618/bHjpwZem_400x400.png
+  detection_source_url: https://github.com/novuhq/examples/blob/main/vue-nextjs-trigger-inapp-notifications/client/vercel.json
+  detection_source: vue-nextjs-trigger-inapp-notifications/client/vercel.json
+  last_updated_by: unicodeveloper
+  last_updated_on: 2023-04-20 17:26:15.000000000 Z
 - name: Moment.js
   description: A JavaScript date library for parsing, validating, manipulating, and
     formatting dates
@@ -307,17 +332,6 @@ tools:
   detection_source: react-dream-todo-app/FrontEnd/package.json
   last_updated_by: Sumit Saurabh
   last_updated_on: 2023-04-27 18:11:25.000000000 Z
-- name: Shell
-  description: A shell is a text-based terminal, used for manipulating programs and
-    files. Shell scripts typically manage program execution.
-  website_url: https://en.wikipedia.org/wiki/Shell_script
-  open_source: false
-  hosted_saas: false
-  category: Languages & Frameworks
-  sub_category: Languages
-  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
-  detection_source_url: https://github.com/novuhq/examples
-  detection_source: Repo Metadata
 - name: axios
   description: Promise based HTTP client for the browser and node.js
   website_url: https://github.com/mzabriskie/axios
@@ -655,6 +669,19 @@ tools:
   detection_source: react-dream-todo-app/BackEnd/package.json
   last_updated_by: Sumit Saurabh
   last_updated_on: 2023-04-27 18:11:25.000000000 Z
+- name: eslint-config-next
+  description: ESLint configuration used by Next.js
+  package_url: https://www.npmjs.com/eslint-config-next
+  version: 13.2.3
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/novuhq/examples/blob/main/vue-nextjs-trigger-inapp-notifications/server-next/package.json
+  detection_source: vue-nextjs-trigger-inapp-notifications/server-next/package.json
+  last_updated_by: unicodeveloper
+  last_updated_on: 2023-04-20 17:26:15.000000000 Z
 - name: eslint-plugin-vue
   description: Official ESLint plugin for Vue.js
   package_url: https://www.npmjs.com/eslint-plugin-vue
@@ -935,6 +962,27 @@ tools:
   detection_source: novu-angular-notification-center/package.json
   last_updated_by: Pawan Jain
   last_updated_on: 2023-04-18 10:41:14.000000000 Z
+- name: vite
+  description: Native-ESM powered web dev build tool
+  package_url: https://www.npmjs.com/vite
+  version: 2.9.15
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/novuhq/examples/blob/main/vue-nextjs-trigger-inapp-notifications/client/package-lock.json
+  detection_source: vue-nextjs-trigger-inapp-notifications/client/package.json
+  last_updated_by: unicodeveloper
+  last_updated_on: 2023-04-20 17:26:15.000000000 Z
+  vulnerabilities:
+  - name: Vite Server Options (server.fs.deny) can be bypassed using double forward-slash
+      (//)
+    cve_id: CVE-2023-34092
+    cve_url: https://github.com/advisories/GHSA-353f-5xf4-qw67
+    detected_date: Nov 23
+    severity: high
+    first_patched: 2.9.16
 - name: vue
   description: Vue
   package_url: https://www.npmjs.com/vue
