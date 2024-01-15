@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-const SUBSCRIBER_ID = 'SUBSCRIBER_ID';
-const APPLICATION_ID = 'APPLICATION_ID';
+const SUBSCRIBER_ID = '651ece9ae1b82d64b388943a';
+const APPLICATION_ID = 'Kzaqr_H9HtvD';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,8 @@ export class AppComponent {
 
   subscriberId = SUBSCRIBER_ID;
   applicationIdentifier = APPLICATION_ID;
+  backendUrl = 'https://api.novu.co';
+  socketUrl = 'https://ws.novu.co';
 
   sessionLoaded = (data: unknown) => {
     console.log('loaded -->', { data });
