@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import { styles } from "./styles"
+</script>
 <script lang="ts">
 export default {
   data() {
@@ -19,6 +22,7 @@ export default {
     :subscriberId="subscriberId"
     :applicationIdentifier="applicationIdentifier"
     :sessionLoaded="sessionLoaded"
+    :styles="styles"
   >
   </NotificationCenterComponent>
 </template>

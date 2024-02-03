@@ -4,7 +4,7 @@ import NotificationCenterWrapper from './components/NotificationCenterWrapper.vu
 
 <template>
    <main>
-    Change <span class="bold">subscriberId</span> and <span class="bold">applicationIdentifier</span> values in <code>src/components/NotificationCenterWrapper.vue</code> to your own values.
+    Change <span class="bold">subscriberId</span> and <span class="bold">applicationIdentifier</span> values in <code>src/components/NotificationCenterWrapper.vue</code> to your own values to remove loader
     <NotificationCenterWrapper />
    </main>   
 </template>
