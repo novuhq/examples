@@ -19,9 +19,7 @@ export default {
     :subscriberId="subscriberId"
     :applicationIdentifier="applicationIdentifier"
     :sessionLoaded="sessionLoaded"
-    v-slot="slot"
   >
-    <button>Notifications: {{ slot.unseenCount }}</button>
   </NotificationCenterComponent>
 </template>
 
