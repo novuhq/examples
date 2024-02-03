@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { styles } from "./styles"
 </script>
+
 <script lang="ts">
 export default {
   data() {
