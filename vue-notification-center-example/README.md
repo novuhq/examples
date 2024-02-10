@@ -64,7 +64,13 @@ cd examples/vue-notificaton-center-example
 npm install
 ```
 
-- Change **SUBSCRIBER_ID** and **APPLICATION_IDENTIFIER** values in `sec/components/NovuNotificationCenter.vue` file with your own values.
+- Create a `.env` file in the root of the project
+
+```
+cp .example.env .env
+```
+
+- Edit environment varibles in `.env` file with your own values
 
 - Run the project
 ``` 

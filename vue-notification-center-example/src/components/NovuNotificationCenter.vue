@@ -5,8 +5,11 @@ import { styles } from "./styles";
 <script lang="ts">
 export default {
   data() {
-    const SUBSCRIBER_ID = "SUBSCRIBER_ID";
-    const APPLICATION_IDENTIFIER = "APPLICATION_IDENTIFIER";
+    const SUBSCRIBER_ID =
+      import.meta.env.VITE_NOVU_SUBSCRIBER_ID ?? "SUBSCRIBER_ID";
+    const APPLICATION_IDENTIFIER =
+      import.meta.env.VITE_NOVU_APPLICATION_IDENTIFIER ??
+      "APPLICATION_IDENTIFIER";
 
     return {
       applicationIdentifier: APPLICATION_IDENTIFIER,

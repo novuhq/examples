@@ -4,10 +4,13 @@ import NotificationCenterWrapper from "./components/NovuNotificationCenter.vue";
 
 <template>
   <main>
-    Change <span class="bold">SUBSCRIBER_ID</span> and
-    <span class="bold">APPLICATION_IDENTIFIER</span> values in
-    <code>src/components/NovuNotificationCenter.vue</code> to your own values to
-    remove loader
+    To remove loader:
+    <ul>
+      <li>
+        Environment variables are set with correct value in
+        <code>.env</code> file
+      </li>
+    </ul>
     <NotificationCenterWrapper />
   </main>
 </template>
