@@ -70,7 +70,7 @@ npm install
 cp .example.env .env
 ```
 
-- Edit environment varibles in `.env` file with your own values
+- Edit environment variables in `.env` file with your own values
 
 - Run the project
 ``` 
