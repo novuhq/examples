@@ -1,27 +1,74 @@
-# NovuAngularNotificationCenter
+<div align="center">
+  <a href="https://novu.co?utm_source=github" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/2233092/213641039-220ac15f-f367-4d13-9eaf-56e79433b8c1.png">
+    <img alt="Novu Logo" src="https://user-images.githubusercontent.com/2233092/213641043-3bbb3f21-3c53-4e67-afe5-755aeb222159.png" width="280"/>
+  </picture>
+  </a>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+<br/>
 
-## Development server
+<p align="center">
+  <a href="https://www.npmjs.com/package/@novu/node">
+    <img src="https://img.shields.io/npm/v/@novu/node" alt="NPM">
+  </a>
+  <a href="https://www.npmjs.com/package/@novu/node">
+    <img src="https://img.shields.io/npm/dm/@novu/node" alt="npm downloads">
+  </a>
+  <img src="https://img.shields.io/github/license/novuhq/novu" alt="MIT">
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h1 align="center">The open-source notification infrastructure for developers</h1>
 
-## Code scaffolding
+<div align="center">
+The ultimate service for managing multi-channel notifications with a single API.
+</div>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p align="center">
+  <br />
+  <a href="https://docs.novu.co" rel="dofollow"><strong>Explore the docs »</strong></a>
+  <br />
 
-## Build
+<br/>
+  <a href="https://github.com/novuhq/novu/issues/new?assignees=&labels=type%3A+bug&template=bug_report.yml&title=%F0%9F%90%9B+Bug+Report%3A+">Report Bug</a>
+  ·
+  <a href="https://github.com/novuhq/novu/issues/new?assignees=&labels=feature&template=feature_request.yml&title=%F0%9F%9A%80+Feature%3A+">Request Feature</a>
+  ·
+<a href="https://discord.novu.co">Join Our Discord</a>
+  ·
+  <a href="https://roadmap.novu.co">Roadmap</a>
+  ·
+  <a href="https://twitter.com/novuhq">X</a>
+  ·
+  <a href="https://notifications.directory">Notifications Directory</a>
+</p>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+# Angular Notification Center Example
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Steps: 
 
-## Running end-to-end tests
+- Clone the example repository
+```
+git clone https://github.com/novuhq/examples.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Go into `novu-angular-notification-center` directory
+```
+cd examples/novu-angular-notification-center
+```
 
-## Further help
+- Install depdendencies
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Change **SUBSCRIBER_ID** and **APPLICATION_IDENTIFIER** values in `src/app/app.component.ts` file
+
+- Run the project
+``` 
+npm run dev
+```
+
+- Open [http://localhost:4200/](http://localhost:4200/) in your browser.
