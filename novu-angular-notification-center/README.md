@@ -68,7 +68,7 @@ npm install
 
 - Run the project
 ``` 
-npm run dev
+npm start
 ```
 
 - Open [http://localhost:4200/](http://localhost:4200/) in your browser.
