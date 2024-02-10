@@ -46,3 +46,29 @@ The ultimate service for managing multi-channel notifications with a single API.
 
 
 # Vue Notification Center Example
+
+Steps: 
+
+- Clone the example repository
+```
+git clone https://github.com/novuhq/examples.git
+```
+
+- Go into `vue-notificaton-center-example` directory
+```
+cd examples/vue-notificaton-center-example
+```
+
+- Install depdendencies
+```
+npm install
+```
+
+- Change **SUBSCRIBER_ID** and **APPLICATION_IDENTIFIER** values in `sec/components/NovuNotificationCenter.vue` file with your own values.
+
+- Run the project
+``` 
+npm run dev
+```
+
+- Open [http://localhost:5173/](http://localhost:5173/) in your browser.
