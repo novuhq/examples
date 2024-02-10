@@ -74,6 +74,14 @@ export default {
     unseenCountChanged(count: number) {
       console.log("Unseen count changed", count);
     },
+
+    preferenceFilter(preferences: any) {
+      if (preferences.template.tags.includes("don-not-show-tag")) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>
@@ -97,6 +105,7 @@ export default {
     :unseenCountChanged="unseenCountChanged"
     :actionClicked="actionClicked"
     :tabClicked="tabClicked"
+    :preferenceFilter="preferenceFilter"
   >
   </NotificationCenterComponent>
 </template>
