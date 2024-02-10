@@ -43,6 +43,10 @@ export default {
       showUserPreferences: true,
       allowedNotificationActions: true,
       colorScheme: "dark",
+      popoverConfig: {
+        position: "bottom-right",
+        offset: 40,
+      },
     };
   },
   methods: {
@@ -100,6 +104,7 @@ export default {
     :showUserPreferences="showUserPreferences"
     :allowedNotificationActions="allowedNotificationActions"
     :colorScheme="colorScheme"
+    :popoverConfig="popoverConfig"
     :sessionLoaded="sessionLoaded"
     :notificationClicked="notificationClicked"
     :unseenCountChanged="unseenCountChanged"

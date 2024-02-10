@@ -193,6 +193,7 @@ export const styles = {
   },
   tabs: {
     tabLabel: {
+      color: primaryTextColor,
       "::after": { background: tabLabelAfterStyle },
       ":hover": { color: tabLabelAfterStyle },
       "[data-active]": { color: tabLabelAfterStyle },
