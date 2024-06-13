@@ -1,0 +1,17 @@
+@media (max-width: 600px) {
+    .sm-my-8 {
+      margin-top: 32px !important;
+      margin-bottom: 32px !important
+    }
+    .sm-px-4 {
+      padding-left: 16px !important;
+      padding-right: 16px !important
+    }
+    .sm-px-6 {
+      padding-left: 24px !important;
+      padding-right: 24px !important
+    }
+    .sm-leading-8 {
+      line-height: 32px !important
+    }
+  }
