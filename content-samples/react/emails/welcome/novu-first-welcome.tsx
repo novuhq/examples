@@ -12,7 +12,7 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface KoalaWelcomeEmailProps {
+interface NovuFirstWelcomeEmailProps {
   userFirstname: string;
 }
 
@@ -20,9 +20,9 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const KoalaWelcomeEmail = ({
+export const NovuFirstWelcomeEmail = ({
   userFirstname,
-}: KoalaWelcomeEmailProps) => (
+}: NovuFirstWelcomeEmailProps) => (
   <Html>
     <Head />
     <Preview>
@@ -31,15 +31,15 @@ export const KoalaWelcomeEmail = ({
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/static/koala-logo.png`}
-          width="170"
+          src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
+          width="50"
           height="50"
-          alt="Koala"
+          alt="Novu"
           style={logo}
         />
         <Text style={paragraph}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Welcome to Koala, the sales intelligence platform that helps you
+          Welcome to Novu, the sales intelligence platform that helps you
           uncover qualified leads and close deals faster.
         </Text>
         <Section style={btnContainer}>
@@ -50,7 +50,7 @@ export const KoalaWelcomeEmail = ({
         <Text style={paragraph}>
           Best,
           <br />
-          The Koala team
+          The Novu team
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
@@ -61,11 +61,11 @@ export const KoalaWelcomeEmail = ({
   </Html>
 );
 
-KoalaWelcomeEmail.PreviewProps = {
+NovuFirstWelcomeEmail.PreviewProps = {
   userFirstname: "Alan",
-} as KoalaWelcomeEmailProps;
+} as NovuFirstWelcomeEmailProps;
 
-export default KoalaWelcomeEmail;
+export default NovuFirstWelcomeEmail;
 
 const main = {
   backgroundColor: "#ffffff",

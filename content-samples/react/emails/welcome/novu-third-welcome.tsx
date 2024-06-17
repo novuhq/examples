@@ -17,35 +17,35 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const StripeWelcomeEmail = () => (
+export const NovuThirdWelcomeEmail = () => (
   <Html>
     <Head />
-    <Preview>You're now ready to make live transactions with Stripe!</Preview>
+    <Preview>You're now ready to make live transactions with Novu!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={box}>
           <Img
-            src={`${baseUrl}/static/stripe-logo.png`}
+            src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
             width="49"
-            height="21"
-            alt="Stripe"
+            height="49"
+            alt="Novu"
           />
           <Hr style={hr} />
           <Text style={paragraph}>
             Thanks for submitting your account information. You're now ready to
-            make live transactions with Stripe!
+            make live transactions with Novu!
           </Text>
           <Text style={paragraph}>
             You can view your payments and a variety of other information about
             your account right from your dashboard.
           </Text>
-          <Button style={button} href="https://dashboard.stripe.com/login">
-            View your Stripe Dashboard
+          <Button style={button} href="https://dashboard.novu.co/login">
+            View your Novu Dashboard
           </Button>
           <Hr style={hr} />
           <Text style={paragraph}>
             If you haven't finished your integration, you might find our{" "}
-            <Link style={anchor} href="https://stripe.com/docs">
+            <Link style={anchor} href="https://novu.co/docs">
               docs
             </Link>{" "}
             handy.
@@ -55,14 +55,14 @@ export const StripeWelcomeEmail = () => (
             use your live{" "}
             <Link
               style={anchor}
-              href="https://dashboard.stripe.com/login?redirect=%2Fapikeys"
+              href="https://dashboard.novu.co/login?redirect=%2Fapikeys"
             >
               API keys
             </Link>{" "}
             instead of your test API keys. Your account can simultaneously be
             used for both test and live requests, so you can continue testing
             while accepting live payments. Check out our{" "}
-            <Link style={anchor} href="https://stripe.com/docs/dashboard">
+            <Link style={anchor} href="https://novu.co/docs/dashboard">
               tutorial about account basics
             </Link>
             .
@@ -71,7 +71,7 @@ export const StripeWelcomeEmail = () => (
             Finally, we've put together a{" "}
             <Link
               style={anchor}
-              href="https://stripe.com/docs/checklist/website"
+              href="https://novu.co/docs/checklist/website"
             >
               quick checklist
             </Link>{" "}
@@ -80,15 +80,15 @@ export const StripeWelcomeEmail = () => (
           <Text style={paragraph}>
             We'll be here to help you with any step along the way. You can find
             answers to most questions and get in touch with us on our{" "}
-            <Link style={anchor} href="https://support.stripe.com/">
+            <Link style={anchor} href="https://support.novu.co/">
               support site
             </Link>
             .
           </Text>
-          <Text style={paragraph}>— The Stripe team</Text>
+          <Text style={paragraph}>— The Novu team</Text>
           <Hr style={hr} />
           <Text style={footer}>
-            Stripe, 354 Oyster Point Blvd, South San Francisco, CA 94080
+            Novu, 354 Oyster Point Blvd, South San Francisco, CA 94080
           </Text>
         </Section>
       </Container>
@@ -96,7 +96,7 @@ export const StripeWelcomeEmail = () => (
   </Html>
 );
 
-export default StripeWelcomeEmail;
+export default NovuThirdWelcomeEmail;
 
 const main = {
   backgroundColor: "#f6f9fc",

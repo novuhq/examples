@@ -16,7 +16,7 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface NetlifyWelcomeEmailProps {
+interface NovuSecondWelcomeEmailProps {
   steps?: {
     id: number;
     Description: React.ReactNode;
@@ -28,7 +28,7 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-const PropDefaults: NetlifyWelcomeEmailProps = {
+const PropDefaults: NovuSecondWelcomeEmailProps = {
   steps: [
     {
       id: 1,
@@ -65,7 +65,7 @@ const PropDefaults: NetlifyWelcomeEmailProps = {
       Description: (
         <li className="mb-20" key={4}>
           <strong>Set up a custom domain.</strong> You can register a new domain
-          and buy it through Netlify or assign a domain you already own to your
+          and buy it through Novu or assign a domain you already own to your
           site. <Link>Add a custom domain</Link>.
         </li>
       ),
@@ -74,14 +74,14 @@ const PropDefaults: NetlifyWelcomeEmailProps = {
   links: ["Visit the forums", "Read the docs", "Contact an expert"],
 };
 
-export const NetlifyWelcomeEmail = ({
+export const NovuSecondWelcomeEmail = ({
   steps = PropDefaults.steps,
   links = PropDefaults.links,
-}: NetlifyWelcomeEmailProps) => {
+}: NovuSecondWelcomeEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Netlify Welcome</Preview>
+      <Preview>Novu Welcome</Preview>
       <Tailwind
         config={{
           theme: {
@@ -101,22 +101,22 @@ export const NetlifyWelcomeEmail = ({
       >
         <Body className="bg-offwhite text-base font-sans">
           <Img
-            src={`${baseUrl}/static/netlify-logo.png`}
-            width="184"
+            src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
+            width="75"
             height="75"
-            alt="Netlify"
+            alt="Novu"
             className="mx-auto my-20"
           />
           <Container className="bg-white p-45">
             <Heading className="text-center my-0 leading-8">
-              Welcome to Netlify
+              Welcome to Novu
             </Heading>
 
             <Section>
               <Row>
                 <Text className="text-base">
                   Congratulations! You're joining over 3 million developers
-                  around the world who use Netlify to build and ship sites,
+                  around the world who use Novu to build and ship sites,
                   stores, and apps.
                 </Text>
 
@@ -158,7 +158,7 @@ export const NetlifyWelcomeEmail = ({
               </Row>
             </Section>
             <Text className="text-center text-gray-400 mb-45">
-              Netlify, 44 Montgomery Street, Suite 300 San Francisco, CA
+              Novu, 44 Montgomery Street, Suite 300 San Francisco, CA
             </Text>
           </Container>
         </Body>
@@ -167,4 +167,4 @@ export const NetlifyWelcomeEmail = ({
   );
 };
 
-export default NetlifyWelcomeEmail;
+export default NovuSecondWelcomeEmail;
