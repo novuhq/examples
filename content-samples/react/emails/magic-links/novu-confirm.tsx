@@ -14,7 +14,7 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface SlackConfirmEmailProps {
+interface NovuConfirmEmailProps {
   validationCode?: string;
 }
 
@@ -22,9 +22,9 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const SlackConfirmEmail = ({
+export const NovuConfirmEmail = ({
   validationCode,
-}: SlackConfirmEmailProps) => (
+}: NovuConfirmEmailProps) => (
   <Html>
     <Head />
     <Preview>Confirm your email address</Preview>
@@ -32,8 +32,8 @@ export const SlackConfirmEmail = ({
       <Container style={container}>
         <Section style={logoContainer}>
           <Img
-            src={`${baseUrl}/static/slack-logo.png`}
-            width="120"
+            src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
+            width="36"
             height="36"
             alt="Slack"
           />
@@ -57,8 +57,8 @@ export const SlackConfirmEmail = ({
           <Row style={footerLogos}>
             <Column style={{ width: "66%" }}>
               <Img
-                src={`${baseUrl}/static/slack-logo.png`}
-                width="120"
+                src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
+                width="36"
                 height="36"
                 alt="Slack"
               />
@@ -155,11 +155,11 @@ export const SlackConfirmEmail = ({
   </Html>
 );
 
-SlackConfirmEmail.PreviewProps = {
+NovuConfirmEmail.PreviewProps = {
   validationCode: "DJZ-TLX",
-} as SlackConfirmEmailProps;
+} as NovuConfirmEmailProps;
 
-export default SlackConfirmEmail;
+export default NovuConfirmEmail;
 
 const footerText = {
   fontSize: "12px",
