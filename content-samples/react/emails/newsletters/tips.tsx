@@ -48,7 +48,7 @@ export const NovuTipsEmail = ({
 }: NovuTipsEmailProps) => (
   <Html>
     <Head />
-    <Preview>Stack overflow tips for searching</Preview>
+    <Preview>Novu tips for searching</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={logo}>
@@ -62,7 +62,7 @@ export const NovuTipsEmail = ({
                 Find what you want, faster
               </Heading>
               <Text style={headerContentSubtitle}>
-                Tips and tricks for searching on Stack Overflow
+                Tips and tricks for searching on Novu
               </Text>
             </Column>
             <Column style={headerImageContainer}>
@@ -122,7 +122,7 @@ export const NovuTipsEmail = ({
 
       <Section style={footer}>
         <Text style={footerText}>
-          You're receiving this email because your Stack Overflow activity
+          You're receiving this email because your Novu activity
           triggered this tip or reminder.
         </Text>
 

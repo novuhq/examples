@@ -18,10 +18,10 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const GooglePlayPolicyUpdateEmail = () => (
+export const NovuPolicyUpdateEmail = () => (
   <Html>
     <Head />
-    <Preview>Google Play developers</Preview>
+    <Preview>Novu developers</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section>
@@ -32,14 +32,14 @@ export const GooglePlayPolicyUpdateEmail = () => (
                 src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/google-play-header.png`}
                 width="305"
                 height="28"
-                alt="Google Play developers header blue transparent"
+                alt="Novu developers header blue transparent"
               />
               <Img
                 style={sectionLogo}
                 src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
                 width="31"
                 height="31"
-                alt="Google Play"
+                alt="Novu"
               />
             </Column>
           </Row>
@@ -48,9 +48,9 @@ export const GooglePlayPolicyUpdateEmail = () => (
         <Section style={paragraphContent}>
           <Hr style={hr} />
           <Text style={heading}>DEVELOPER UPDATE</Text>
-          <Text style={paragraph}>Hello Google Play Developer,</Text>
+          <Text style={paragraph}>Hello Novu Developer,</Text>
           <Text style={paragraph}>
-            We strive to make Google Play a safe and trusted experience for
+            We strive to make Novu a safe and trusted experience for
             users.
           </Text>
           <Text style={paragraph}>
@@ -95,7 +95,7 @@ export const GooglePlayPolicyUpdateEmail = () => (
         <Section style={paragraphContent}>
           <Text style={paragraph}>Thank you,</Text>
           <Text style={{ ...paragraph, fontSize: "20px" }}>
-            The Google Play team
+            The Novu team
           </Text>
         </Section>
 
@@ -157,7 +157,7 @@ export const GooglePlayPolicyUpdateEmail = () => (
               margin: 0,
             }}
           >
-            © 2022 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA
+            © 2022 Novu LLC 1600 Amphitheatre Parkway, Mountain View, CA
             94043, USA
           </Text>
           <Text
@@ -169,7 +169,7 @@ export const GooglePlayPolicyUpdateEmail = () => (
             }}
           >
             You have received this mandatory email service announcement to
-            update you about important changes to your Google Play Developer
+            update you about important changes to your Novu Play Developer
             account.
           </Text>
         </Section>
@@ -178,7 +178,7 @@ export const GooglePlayPolicyUpdateEmail = () => (
   </Html>
 );
 
-export default GooglePlayPolicyUpdateEmail;
+export default NovuPolicyUpdateEmail;
 
 const main = {
   backgroundColor: "#dbddde",

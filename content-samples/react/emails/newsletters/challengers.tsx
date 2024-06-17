@@ -83,7 +83,7 @@ export const NovuChallengersEmail = () => (
             style={imgCube}
             src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/codepen-cube.png`}
             width={600}
-            alt="codepen"
+            alt="Novu"
           />
 
           <Section style={sectionPro}>
