@@ -35,7 +35,7 @@ export const NovuConfirmEmail = ({
             src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
             width="36"
             height="36"
-            alt="Slack"
+            alt="Novu"
           />
         </Section>
         <Heading style={h1}>Confirm your email address</Heading>
@@ -60,7 +60,7 @@ export const NovuConfirmEmail = ({
                 src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
                 width="36"
                 height="36"
-                alt="Slack"
+                alt="Novu"
               />
             </Column>
             <Column>
@@ -69,10 +69,10 @@ export const NovuConfirmEmail = ({
                   <Column>
                     <Link href="/">
                       <Img
-                        src={`${baseUrl}/static/slack-twitter.png`}
+                        src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-twitter.png`}
                         width="32"
                         height="32"
-                        alt="Slack"
+                        alt="Novu"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -80,10 +80,10 @@ export const NovuConfirmEmail = ({
                   <Column>
                     <Link href="/">
                       <Img
-                        src={`${baseUrl}/static/slack-facebook.png`}
+                        src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-facebook.png`}
                         width="32"
                         height="32"
-                        alt="Slack"
+                        alt="Novu"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -91,10 +91,10 @@ export const NovuConfirmEmail = ({
                   <Column>
                     <Link href="/">
                       <Img
-                        src={`${baseUrl}/static/slack-linkedin.png`}
+                        src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-linkedin.png`}
                         width="32"
                         height="32"
-                        alt="Slack"
+                        alt="Novu"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -141,10 +141,10 @@ export const NovuConfirmEmail = ({
             data-auth="NotApplicable"
             data-linkindex="6"
           >
-            Slack Community
+            Novu Community
           </Link>
           <Text style={footerText}>
-            ©2022 Slack Technologies, LLC, a Salesforce company. <br />
+            ©2022 Novu Technologies, LLC, a Salesforce company. <br />
             500 Howard Street, San Francisco, CA 94105, USA <br />
             <br />
             All rights reserved.
