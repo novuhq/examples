@@ -1,6 +1,6 @@
 ## NOVU WORKFLOWS 
 
-This directory consists of drop-in working projects of different types of notification workflows you can use in your app as a developer.
+This directory consists of drop-in working projects of different types of notification workflows you can use in your React app as a developer.
 
 Each directory is a batteries-included Novu Nextjs app that you can simply clone, install and run!
 
