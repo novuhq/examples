@@ -68,7 +68,7 @@ export const YelpRecentLogin = workflow(
       async () => {
         return {
           subject: "Recent login to your Yelp Account",
-          body: "We noticed a recent login to your Yelp account. If this was you, there's nothing else you need to do. If this wasn't you or please see our support page.",
+          body: `Hi ${payload.userFirstName}, we noticed a recent login to your Yelp account. If this was you, there's nothing else you need to do. If this wasn't you or please see our support page.`,
         };
       }
     );
