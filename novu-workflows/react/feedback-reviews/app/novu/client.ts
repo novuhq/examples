@@ -1,6 +1,6 @@
 import { Client, workflow } from "@novu/framework";
 import { feedbackEmail } from "./emails/feedback";
-import { PlaidVerifyIdentityEmailProps } from "./emails/feedback";
+
 export const client = new Client({
   /**
    * Enable this flag only during local development
@@ -8,11 +8,8 @@ export const client = new Client({
   strictAuthentication: false,
 });
 
-// ------------------3. product review (changes required)----------------------------
-
-
-export const feedbackEmailWorkflow = workflow(
-  "product-feedback-email",
+export const AirbnbReview = workflow(
+  "airbnb-review-email",
   async ({ step, payload }) => {
 
     // introducing delay here
@@ -29,7 +26,7 @@ export const feedbackEmailWorkflow = workflow(
       async () => {
         return {
           subject: "You have a new review",
-          body: feedbackEmail(payload as PlaidVerifyIdentityEmailProps),
+          body: feedbackEmail(payload),
         };
       }
     );
