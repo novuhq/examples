@@ -35,15 +35,24 @@ export const YelpRecentLogin = workflow(
         inputSchema: {
           type: "object",
           properties: {
+            receiptSubject: {
+              title: "Email Subject",
+              type: "string",
+              default: "Recent login to your Account"
+            },
             noticeHeaderText: {
               type: "string",
               default: "We noticed a recent login to your Yelp account.",
               title: "Notice Header"
             },
-            receiptSubject: {
-              title: "Email Subject",
+            headerImage: {
+              title: "Header Image",
               type: "string",
-              default: "Recent login to your Account"
+              enum: [
+                'yellow', 
+                'purple', 
+              ],
+              default: "yellow"
             },
             bodyContentText: {
               title: "First Content Text",

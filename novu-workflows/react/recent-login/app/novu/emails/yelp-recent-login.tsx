@@ -21,22 +21,29 @@ interface YelpRecentLoginEmailProps {
   loginDevice?: string;
   loginLocation?: string;
   loginIp?: string;
+  headerImage?: string;
 }
 
 const baseUrl = 'https://react-email-demo-1sy86epzj-resend.vercel.app';
 
 export const YelpRecentLoginEmail = ({
+  headerImage,
   userFirstName,
   loginDate,
   loginDevice,
   loginLocation,
-  loginIp,
+  loginIp
 }: YelpRecentLoginEmailProps) => {
   
   const formattedDate = new Intl.DateTimeFormat("en", {
     dateStyle: "long",
     timeStyle: "short",
   }).format(loginDate);
+
+  const Images = {
+      'yellow' : 'https://react-email-demo-1sy86epzj-resend.vercel.app/static/yelp-header.png',
+      'purple' : 'https://png.pngtree.com/thumb_back/fh260/background/20201014/pngtree-abstract-waving-particle-technology-background-abstract-gradient-design-template-for-brochures-image_416117.jpg'
+  };
 
   return (
     <Html>
@@ -50,11 +57,23 @@ export const YelpRecentLoginEmail = ({
 
           <Section style={content}>
             <Row>
-              <Img
-                style={image}
-                width={620}
-                src={`${baseUrl}/static/yelp-header.png`}
-              />
+
+              { headerImage == 'yellow' &&
+                  <Img
+                  style={image}
+                  width={620}
+                  src={Images['yellow']}
+                />
+              }
+
+              { headerImage == 'purple' &&
+                  <Img
+                  style={image}
+                  width={620}
+                  src={Images['purple']}
+                />
+              }
+              
             </Row>
 
             <Row style={{ ...boxInfos, paddingBottom: "0" }}>
