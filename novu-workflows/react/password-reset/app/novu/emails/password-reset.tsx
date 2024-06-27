@@ -15,9 +15,9 @@ import {
 import * as React from "react";
 
 interface DropboxResetPasswordEmailProps {
-    headingText?: string;
-    headingTextSize?: string
-    headingTextColour?: string
+    headerText?: string;
+    headerTextSize?: string
+    headerTextColour?: string
     resetPasswordLink?: string;
     bodyTextOne?: string
     bodyTextOneColour?: string
@@ -26,16 +26,14 @@ interface DropboxResetPasswordEmailProps {
     bodyTextThree?: string
     bodyTextThreeColour?: string
     showButton?: boolean
-    showMagicLink?: boolean
+    showResetLink?: boolean
     linkText?: string
 }
 
-const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
+const baseUrl = 'https://react-email-demo-48zvx380u-resend.vercel.app';
 
 export const DropboxResetPasswordEmail = ({
-    headingText,
+    headerText,
     resetPasswordLink,
     bodyTextOne,
     bodyTextOneColour,
@@ -44,9 +42,9 @@ export const DropboxResetPasswordEmail = ({
     bodyTextThree,
     bodyTextThreeColour,
     showButton,
-    showMagicLink,
-    headingTextSize,
-    headingTextColour,
+    showResetLink,
+    headerTextSize,
+    headerTextColour,
     linkText
 }: DropboxResetPasswordEmailProps) => {
     return (
@@ -56,13 +54,13 @@ export const DropboxResetPasswordEmail = ({
             <Body style={main}>
                 <Container style={container}>
                     <Img
-                        src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/dropbox-logo.png`}
+                        src={`${baseUrl}/static/dropbox-logo.png`}
                         width="40"
                         height="33"
                         alt="Dropbox"
                     />
                     <Section>
-                        <Text style={{ ...headingTextStyle, fontSize: headingTextSize, color: headingTextColour }}>{headingText}</Text>
+                        <Text style={{ ...headingTextStyle, fontSize: headerTextSize, color: headerTextColour }}>{headerText}</Text>
                         <Text style={{ ...text, color: bodyTextOneColour }}>
                             {bodyTextOne}
                         </Text>
@@ -72,8 +70,13 @@ export const DropboxResetPasswordEmail = ({
                         <Text style={{ ...text, color: bodyTextThreeColour }}>
                             {bodyTextThree}
                         </Text>
+
                         {showButton ? <Button style={button} href={resetPasswordLink}>Reset password</Button> : null}
-                        {showMagicLink ? <a href="novu.co" >{linkText}</a> : null}
+
+                        <Text>
+                        {showResetLink ? <a href="novu.co" >{linkText}</a> : null}
+                        </Text>
+                        
                         <Text style={text}>Happy Dropboxing!</Text>
                     </Section>
                 </Container>
@@ -85,7 +88,7 @@ export const DropboxResetPasswordEmail = ({
 DropboxResetPasswordEmail.PreviewProps = {
     userFirstname: "Alan",
     resetPasswordLink: "https://dropbox.com",
-} as DropboxResetPasswordEmailProps;
+};
 
 export default DropboxResetPasswordEmail;
 
@@ -131,6 +134,6 @@ const anchor = {
     textDecoration: "underline",
 };
 
-export function renderPasswordResetEmail(payload: DropboxResetPasswordEmailProps) {
-    return render(<DropboxResetPasswordEmail {...payload} />);
+export function renderPasswordResetEmail(inputs: any, payload: any) {
+    return render(<DropboxResetPasswordEmail {...inputs} {...payload} />);
 }
