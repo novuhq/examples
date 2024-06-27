@@ -20,6 +20,9 @@ const formattedDate = new Intl.DateTimeFormat("en", {
 export const YelpRecentLogin = workflow(
   "Yelp Recent Login",
   async ({ step, payload }) => {
+    /**
+     *  Email Flow
+     */
     await step.email(
       "send-email",
       async (inputs) => {
@@ -55,6 +58,19 @@ export const YelpRecentLogin = workflow(
           },
         },
       },
+    );
+
+    /** 
+     *  Push Flow
+     */
+    await step.push(
+      "send-push",
+      async () => {
+        return {
+          subject: "Recent login to your Yelp Account",
+          body: "We noticed a recent login to your Yelp account. If this was you, there's nothing else you need to do. If this wasn't you or please see our support page.",
+        };
+      }
     );
   },
   { payloadSchema: {
