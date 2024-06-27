@@ -251,36 +251,42 @@ export const AppleReceiptEmail = ({
                       </Section>
                     </Section>
                   ) : null}
+
+                  {item.componentType === "apple-card-campaign" ? (
+                    <Section>
+                      <Hr style={walletBottomLine} />
+                      <Text style={footerText}>
+                      1. 3% savings is earned as Daily Cash and is transferred to your Apple
+                      Cash card when transactions post to your Apple Card account. If you do
+                      not have an Apple Cash card, Daily Cash can be applied by you as a
+                      credit on your statement balance. 3% is the total amount of Daily Cash
+                      earned for these purchases. See the Apple Card Customer Agreement for
+                      more details on Daily Cash and qualifying transactions.
+                      </Text>
+                      <Text style={footerText}>2. Subject to credit approval.</Text>
+                      <Text style={footerText}>
+                        To access and use all the features of Apple Card, you must add Apple
+                        Card to Wallet on an iPhone or iPad with iOS or iPadOS 13.2 or later.
+                        Update to the latest version of iOS or iPadOS by going to Settings
+                        &gt; General &gt; Software Update. Tap Download and Install.
+                      </Text>
+                      <Text style={footerText}>
+                        Available for qualifying applicants in the United States.
+                      </Text>
+                      <Text style={footerText}>
+                        Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
+                      </Text>
+                      <Text style={footerText}>
+                        If you reside in the US territories, please call Goldman Sachs at
+                        877-255-5923 with questions about Apple Card.
+                      </Text>
+                    </Section>
+                  ) : null}
                 </Section>
               );
             })}
         </Section>
-        <Hr style={walletBottomLine} />
-        <Text style={footerText}>
-          1. 3% savings is earned as Daily Cash and is transferred to your Apple
-          Cash card when transactions post to your Apple Card account. If you do
-          not have an Apple Cash card, Daily Cash can be applied by you as a
-          credit on your statement balance. 3% is the total amount of Daily Cash
-          earned for these purchases. See the Apple Card Customer Agreement for
-          more details on Daily Cash and qualifying transactions.
-        </Text>
-        <Text style={footerText}>2. Subject to credit approval.</Text>
-        <Text style={footerText}>
-          To access and use all the features of Apple Card, you must add Apple
-          Card to Wallet on an iPhone or iPad with iOS or iPadOS 13.2 or later.
-          Update to the latest version of iOS or iPadOS by going to Settings
-          &gt; General &gt; Software Update. Tap Download and Install.
-        </Text>
-        <Text style={footerText}>
-          Available for qualifying applicants in the United States.
-        </Text>
-        <Text style={footerText}>
-          Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
-        </Text>
-        <Text style={footerText}>
-          If you reside in the US territories, please call Goldman Sachs at
-          877-255-5923 with questions about Apple Card.
-        </Text>
+
         <Text style={footerTextCenter}>
           Privacy: We use a
           <Link href="http://support.apple.com/kb/HT207233" style={footerLink}>

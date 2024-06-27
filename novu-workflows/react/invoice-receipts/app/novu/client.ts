@@ -11,6 +11,12 @@ export const client = new Client({
 /**
  * Apple Receipt Workflow
  */
+const date = new Date();
+const formattedDate = new Intl.DateTimeFormat("en", {
+dateStyle: "long",
+timeStyle: "short",
+}).format(date);
+
 export const appleReceipt = workflow(
   "apple-receipt-email",
   async ({ step, payload }) => {
@@ -18,7 +24,7 @@ export const appleReceipt = workflow(
       "send-email",
       async (inputs) => {
         return {
-          subject: "Your receipt from Apple Stratford City",
+          subject: inputs.receiptSubject,
           body: renderAppleReceiptEmail(inputs, payload),
         };
       },
@@ -40,7 +46,7 @@ export const appleReceipt = workflow(
                     type: "string",
                     enum: [
                       "text", "divider", "button", 
-                      "heading", "apple-card-purchase"
+                      "heading", "apple-card-purchase", "apple-card-campaign"
                     ],
                     default: "text",
                   },
@@ -59,14 +65,19 @@ export const appleReceipt = workflow(
             applePurchaseAd: {
               type: "string",
               default: "Save 3% on all your Apple purchases with Apple Card.",
-              title: "Top Apple Purchase Ad"
+              title: "Top Apple Purchase Campaign"
             },
             applyUseLink: {
               type: "string",
               default: "https://www.apple.com/apple-card",
-              title: "Apply and Use Link",
+              title: "Top Apple Purchase Campaign Link",
               format: "uri"
             },
+            receiptSubject: {
+              title: "Receipt Email Title",
+              type: "string",
+              default: "Your receipt from Apple Stratford City"
+            }
           },
         },
       },
@@ -90,6 +101,16 @@ export const appleReceipt = workflow(
           type: "string",
           default: "ML4F5L8522"
         },
+        billedTo: {
+          title: "BILLED TO",
+          type: "string",
+          default: "Alan Turing"
+        },
+        documentNo: {
+          title: "Document No.",
+          type: "string",
+          default: "186623754793"
+        }
       }
     }
   },
