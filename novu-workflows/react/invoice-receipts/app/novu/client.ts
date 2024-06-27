@@ -18,7 +18,7 @@ const formattedDate = new Intl.DateTimeFormat("en", {
 }).format(date);
 
 export const appleReceipt = workflow(
-  "apple-receipt",
+  "Apple Receipt",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
