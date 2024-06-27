@@ -11,15 +11,10 @@ export const client = new Client({
 /**
  * Recent Login Workflow
  */
-const detectDeviceType = () =>
-  /Mobile|Android|iPhone|iPad/i.test(navigator.userAgent)
-    ? 'Mobile'
-    : 'Desktop';
-
 const date = new Date();
 const formattedDate = new Intl.DateTimeFormat("en", {
-dateStyle: "long",
-timeStyle: "short",
+  dateStyle: "long",
+  timeStyle: "short",
 }).format(date);
 
 export const YelpRecentLogin = workflow(
@@ -73,7 +68,7 @@ export const YelpRecentLogin = workflow(
         loginDevice: {
           title: "Device",
           type: "string",
-          default: detectDeviceType(),
+          default: 'Desktop',
         },
         loginLocation: {
           title: "Location",
