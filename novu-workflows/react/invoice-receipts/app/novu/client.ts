@@ -13,12 +13,12 @@ export const client = new Client({
  */
 const date = new Date();
 const formattedDate = new Intl.DateTimeFormat("en", {
-dateStyle: "long",
-timeStyle: "short",
+  dateStyle: "long",
+  timeStyle: "short",
 }).format(date);
 
 export const appleReceipt = workflow(
-  "apple-receipt-email",
+  "apple-receipt",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
@@ -74,7 +74,7 @@ export const appleReceipt = workflow(
               format: "uri"
             },
             receiptSubject: {
-              title: "Receipt Email Title",
+              title: "Email Subject",
               type: "string",
               default: "Your receipt from Apple Stratford City"
             }
