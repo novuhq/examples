@@ -9,7 +9,7 @@ export const client = new Client({
 });
 
 export const AirbnbReview = workflow(
-  "airbnb-review",
+  "Airbnb Review",
   async ({ step, payload }) => {
 
     // introducing delay here
