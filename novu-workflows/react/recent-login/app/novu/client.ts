@@ -23,7 +23,7 @@ timeStyle: "short",
 }).format(date);
 
 export const YelpRecentLogin = workflow(
-  "yelp-recent-login",
+  "Yelp Recent Login",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
