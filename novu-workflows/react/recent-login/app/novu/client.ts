@@ -1,5 +1,5 @@
 import { Client, workflow } from "@novu/framework";
-import { renderLoginEmail } from "./emails/recent-login";
+import { renderLoginEmail } from "./emails/yelp-recent-login";
 
 export const client = new Client({
   /**
@@ -22,8 +22,8 @@ dateStyle: "long",
 timeStyle: "short",
 }).format(date);
 
-export const recentLogin = workflow(
-  "recent-login-email",
+export const YelpRecentLogin = workflow(
+  "yelp-recent-login",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
@@ -40,8 +40,23 @@ export const recentLogin = workflow(
             noticeHeaderText: {
               type: "string",
               default: "We noticed a recent login to your Yelp account.",
-              title: "Notice Header Text"
+              title: "Notice Header"
             },
+            receiptSubject: {
+              title: "Email Subject",
+              type: "string",
+              default: "Recent login to your Account"
+            },
+            bodyContentText: {
+              title: "First Content Text",
+              type: "string",
+              default: "If this was you, there's nothing else you need to do."
+            },
+            additionalBodyContentText: {
+              title: "Additional Content Text",
+              type: "string",
+              default: "If this wasn't you or if you have additional questions, please see our support page."
+            }
           },
         },
       },
@@ -70,6 +85,11 @@ export const recentLogin = workflow(
           type: "string",
           default: "47.149.53.167",
         },
+        userFirstName: {
+          title: "User First Name",
+          type: "string",
+          default: "Jane"
+        }
       }
     }
   },
