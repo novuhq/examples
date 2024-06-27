@@ -11,14 +11,23 @@ export const client = new Client({
 /**
  * Amazon Shipping Order Email Workflow
  */
+
+const date = new Date();
+
+const formattedDate = new Intl.DateTimeFormat("en", {
+  weekday: "long",
+  month: "long",
+  day: "numeric"
+}).format(date);
+
 export const amazonShippingOrderEmail = workflow(
-  "amazon-shippingorder-email",
+  "Amazon Shipping Order",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
       async (inputs) => {
         return {
-          subject: "Shipping order confirmation",
+          subject: inputs.emailSubject,
           body: renderShippingOrderEmail(inputs, payload),
         };
       },
@@ -68,9 +77,14 @@ export const amazonShippingOrderEmail = workflow(
               },
             },
             topText: {
+              title: "Pre-shipping Confirmation Text",
               type: "string",
-              default: "We wanted to let you know that we have shipped your items.",
-              title: "Top Text"
+              default: "We wanted to let you know that we have shipped your items."
+            },
+            emailSubject: {
+              title: "Email Subject",
+              type: "string",
+              default: "Shipping order confirmation"
             },
           },
         },
@@ -83,7 +97,7 @@ export const amazonShippingOrderEmail = workflow(
         orderArrivalLocation: {
           title: "Order Arrival Location",
           type: "string",
-          default: "Moddin, Israel"
+          default: "Prague, Czech"
         },
         orderArrivalDate: {
           title: "Order Arrival Date",
@@ -95,6 +109,11 @@ export const amazonShippingOrderEmail = workflow(
           type: "string",
           default: "112-6949858-2887402"
         },
+        userFirstName: {
+           title: "Order Receiver First Name",
+           type: "string",
+           default: "John"
+        }
       }
     }
   },

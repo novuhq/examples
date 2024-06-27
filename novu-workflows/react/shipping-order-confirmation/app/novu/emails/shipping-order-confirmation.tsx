@@ -23,12 +23,18 @@ interface AmazonShippingEmailProps {
   titleText?: string;
   topText?: string;
   components?: any;
+  userFirstName?: string;
+  orderArrivalLocation?: string;
+  orderArrivalDate?: any;
 }
 
 const baseUrl = 'https://react-email-demo-1sy86epzj-resend.vercel.app';
 const amazonLogo = 'https://assets.aboutamazon.com/dims4/default/c1f10ce/2147483647/strip/true/crop/1200x800+0+0/resize/324x216!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F75%2Fab%2F53dea402445d83406077763cfde7%2Famazon-logo-1200x800.png';
 
 export const AmazonShippingEmail = ({
+  userFirstName,
+  orderArrivalLocation,
+  orderArrivalDate,
   topText,
   components
 }: AmazonShippingEmailProps) => {
@@ -56,7 +62,7 @@ export const AmazonShippingEmail = ({
               <Section>
                 <Row>
                   <Text className="m-0 text-xl font-semibold text-gray-900">
-                    Hello Tomer,
+                    Hello {userFirstName},
                   </Text>
                   <Text className="mt-2 text-[16px] text-gray-500">
                     {topText}.
@@ -69,12 +75,12 @@ export const AmazonShippingEmail = ({
                   </h4>
 
                   <Text className="text-[16px] text-gray-500">
-                    Your package will arrive by: <b className="text-black">Wednesday, July 10</b>
+                    Your package will arrive by: <b className="text-black">{orderArrivalDate}</b>
                   </Text>
                 </Row>
                 <Row>
                   <Text className="mt-2 text-[16px] text-gray-500">
-                    Ship to: <b className="text-black">Tomer</b> <b className="text-black">Moddin, Israel</b>
+                    Ship to: <b className="text-black">{userFirstName}</b> <b className="text-black">{orderArrivalLocation}</b>
                   </Text>
                 </Row>
                 <Row>
