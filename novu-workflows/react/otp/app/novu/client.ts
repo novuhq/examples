@@ -1,5 +1,7 @@
 import { Client, workflow } from "@novu/framework";
-import { otpWorkflow } from "./emails/otp";
+import { renderOtpEmail } from "./emails/slack-otp";
+
+
 export const client = new Client({
   /**
    * Enable this flag only during local development
@@ -7,68 +9,86 @@ export const client = new Client({
   strictAuthentication: false,
 });
 
-
-// ------------------email flow-----------------------------------------------------------------------------------------------
-
-
-export const verificationOTP = workflow(
-  "verify-OTP",
+export const SlackVerificationOTP = workflow(
+  "Slack Verify OTP",
   async ({ step, payload }) => {
     await step.email(
       "send-email",
-      async () => {
+      async (inputs) => {
         return {
-          subject: "Verify your OTP!",
-          body: otpWorkflow(payload),
+          subject: inputs.emailSubject,
+          body: renderOtpEmail(inputs, payload),
         };
-      }
-    )
+      },
+      {
+        inputSchema: {
+          type: "object",
+          properties: {
+            emailSubject: {
+              title: "Email Subject",
+              type: "string",
+              default: "Verify your Slack OTP!"
+            },
+            confirmAddressHeader: {
+              type: "string",
+              default: "Confirm your email address",
+              title: "Confirm Address Header"
+            },
+            majorBodyText: {
+              type: "string",
+              default: "Your confirmation code is below - enter it in your open browser window and we'll help you get signed in.",
+              title: "Major Body Text"
+            },
+            showMagicLink: { 
+              type: "boolean", 
+              default: false,
+              title: "Show Magic Link" 
+            },
+            linkText: {
+              type: 'string',
+              default: 'Click this link if the OTP does not work for you!',
+              title: 'Magic link Text'
+            },
+            showOTP: {
+              type: "boolean",
+              default: true,
+              title: "Show OTP"
+            },
+          },
+        },
+      });
+
     // -----------------------------------push flow-------------------------------------------------------------------------
     await step.push('send-push', async () => {
       return {
-        subject: 'You received an OTP',
-        body: `Your verification code is ${payload.validationCode}`,
-      };
-    });
-    // -----------------------------------sms flow-------------------------------------------------------------------------  
-    await step.sms('send-sms', async () => {
-      return {
-        body: `Your verification code is ${payload.validationCode}`,
+        subject: 'You received a Slack OTP',
+        body: `Your verification code from Slack is ${payload.validationCode}`,
       };
     });
 
+    // -----------------------------------sms flow-------------------------------------------------------------------------  
+    await step.sms('send-sms', async () => {
+      return {
+        subject: 'You received a Slack OTP',
+        body: `Your verification code from Slack is ${payload.validationCode}`,
+      };
+    });
   },
   {
     payloadSchema: {
       type: "object",
       properties: {
-        headerText: {
-          type: "string",
-          default: "Confirm your email address",
-          title: "heading",
-        },
-        bodyText: {
-          type: "string",
-          title: "Body Text",
-          default: "Your confirmation code is below - enter it in your open browser window and we'll help you get signed in.",
-        },
-        showOTP: {
-          type: "boolean",
-          default: true
-        },
         validationCode: {
           type: "string",
           default: "123456",
           title: "OTP",
         },
-        showMagicLink: { type: "boolean", default: false },
-        linkText: {
-          type: 'string',
-          default: 'Click this link if the OTP does not work for you!',
-          title: 'Magic link text'
+        magicLinkURL: {
+          type: "string",
+          default: "https://slack.com/magic/link",
+          title: "Magic Link URL"
         }
       },
-      required: [""],
     },
   },
 );

@@ -17,27 +17,27 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface PlaidVerifyIdentityEmailProps {
+interface SlackVerifyOTPEmailProps { 
     validationCode?: string;
-    bodyText?: string;
-    headerText?: string;
     showMagicLink?: boolean;
+    magicLinkURL?: string;
     linkText?: string;
     showOTP?: boolean;
+    confirmAddressHeader?: string;
+    majorBodyText?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
+const baseUrl = 'https://react-email-demo-48zvx380u-resend.vercel.app';
 
-export const PlaidVerifyIdentityEmail = ({
+export const SlackVerifyOTPEmail = ({
     validationCode,
-    bodyText,
-    headerText,
+    confirmAddressHeader,
+    majorBodyText,
     showMagicLink,
+    magicLinkURL,
     linkText,
     showOTP
-}: PlaidVerifyIdentityEmailProps) => (
+}:  SlackVerifyOTPEmailProps) => (
 
     <Html>
         <Head />
@@ -46,21 +46,21 @@ export const PlaidVerifyIdentityEmail = ({
             <Container style={container}>
                 <Section style={logoContainer}>
                     <Img
-                        src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-logo.png`}
+                        src={`${baseUrl}/static/slack-logo.png`}
                         width="120"
                         height="36"
                         alt="Slack"
                     />
                 </Section>
-                <Heading style={h1}>{headerText}</Heading>
+                <Heading style={h1}>{confirmAddressHeader}</Heading>
                 <Text style={heroText}>
-                    {bodyText}
+                    {majorBodyText}
                 </Text>
                 {showOTP ? <Section style={codeBox}><Text style={confirmationCodeText}>{validationCode}</Text></Section> : null}
 
 
                 <Text style={text}>
-                    {showMagicLink ? <Button href="novu.co" style={magicLink} >{linkText}</Button> : null}
+                    {showMagicLink ? <Link href={magicLinkURL} style={magicLinkStyle} >{linkText}</Link> : null}
                 </Text>
                 <Text style={text}>
                     If you didn't request this email, there's nothing to worry about, you
@@ -71,7 +71,7 @@ export const PlaidVerifyIdentityEmail = ({
                     <Row style={footerLogos}>
                         <Column style={{ width: "66%" }}>
                             <Img
-                                src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-logo.png`}
+                                src={`${baseUrl}/static/slack-logo.png`}
                                 width="120"
                                 height="36"
                                 alt="Slack"
@@ -83,7 +83,7 @@ export const PlaidVerifyIdentityEmail = ({
                                     <Column>
                                         <Link href="/">
                                             <Img
-                                                src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-twitter.png`}
+                                                src={`${baseUrl}/static/slack-twitter.png`}
                                                 width="32"
                                                 height="32"
                                                 alt="Slack"
@@ -94,7 +94,7 @@ export const PlaidVerifyIdentityEmail = ({
                                     <Column>
                                         <Link href="/">
                                             <Img
-                                                src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-facebook.png`}
+                                                src={`${baseUrl}/static/slack-facebook.png`}
                                                 width="32"
                                                 height="32"
                                                 alt="Slack"
@@ -105,7 +105,7 @@ export const PlaidVerifyIdentityEmail = ({
                                     <Column>
                                         <Link href="/">
                                             <Img
-                                                src={`https://react-email-demo-48zvx380u-resend.vercel.app/static/slack-linkedin.png`}
+                                                src={`${baseUrl}/static/slack-linkedin.png`}
                                                 width="32"
                                                 height="32"
                                                 alt="Slack"
@@ -170,11 +170,11 @@ export const PlaidVerifyIdentityEmail = ({
 
 );
 
-PlaidVerifyIdentityEmail.PreviewProps = {
+SlackVerifyOTPEmail.PreviewProps = {
     validationCode: "144833",
-} as PlaidVerifyIdentityEmailProps;
+};
 
-export default PlaidVerifyIdentityEmail;
+export default SlackVerifyOTPEmail;
 
 const footerText = {
     fontSize: "12px",
@@ -244,7 +244,7 @@ const confirmationCodeText = {
     textAlign: "center" as const,
     verticalAlign: "middle",
 };
-const magicLink = {
+const magicLinkStyle = {
     textAlign: "center" as const,
     verticalAlign: "middle",
     fontSize: "20px"
@@ -256,6 +256,6 @@ const text = {
 };
 
 
-export function otpWorkflow(payload: PlaidVerifyIdentityEmailProps) {
-    return render(<PlaidVerifyIdentityEmail {...payload} />);
+export function renderOtpEmail(inputs: any, payload: any) {
+    return render(<SlackVerifyOTPEmail {...inputs} {...payload} />);
 }
