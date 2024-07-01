@@ -1,4 +1,4 @@
 import { serve } from "@novu/framework/next";
-import { client, SlackVerificationOTP } from "../../novu/client";
+import { SlackVerificationOTP } from "../../novu/workflows";
 
-export const { GET, POST, PUT, OPTIONS } = serve({ client, workflows: [SlackVerificationOTP] });
+export const { GET, POST, OPTIONS } = serve({ workflows: [SlackVerificationOTP] });
