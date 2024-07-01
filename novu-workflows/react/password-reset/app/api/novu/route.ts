@@ -1,4 +1,4 @@
 import { serve } from "@novu/framework/next";
-import { client, DropboxPasswordResetEmail } from "../../novu/client";
+import { DropboxPasswordResetEmail } from "../../novu/workflows";
 
-export const { GET, POST, PUT, OPTIONS } = serve({ client, workflows: [DropboxPasswordResetEmail] });
+export const { GET, POST, OPTIONS } = serve({ workflows: [DropboxPasswordResetEmail] });

@@ -1,4 +1,3 @@
-
 import {
     Body,
     Button,
@@ -25,7 +24,7 @@ interface DropboxResetPasswordEmailProps {
     bodyTextTwoColour?: string
     bodyTextThree?: string
     bodyTextThreeColour?: string
-    showButton?: boolean
+    showResetPasswordButton?: boolean
     showResetLink?: boolean
     linkText?: string
 }
@@ -41,7 +40,7 @@ export const DropboxResetPasswordEmail = ({
     bodyTextTwoColour,
     bodyTextThree,
     bodyTextThreeColour,
-    showButton,
+    showResetPasswordButton,
     showResetLink,
     headerTextSize,
     headerTextColour,
@@ -71,7 +70,7 @@ export const DropboxResetPasswordEmail = ({
                             {bodyTextThree}
                         </Text>
 
-                        {showButton ? <Button style={button} href={resetPasswordLink}>Reset password</Button> : null}
+                        {showResetPasswordButton ? <Button style={button} href={resetPasswordLink}>Reset password</Button> : null}
 
                         <Text>
                         {showResetLink ? <a href="novu.co" >{linkText}</a> : null}
