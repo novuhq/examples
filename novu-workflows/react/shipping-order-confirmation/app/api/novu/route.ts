@@ -1,4 +1,4 @@
 import { serve } from "@novu/framework/next";
-import { client, amazonShippingOrderEmail} from "../../novu/client";
+import { AmazonShippingOrderConfirmation } from "../../novu/workflows";
 
-export const { GET, POST, PUT, OPTIONS } = serve({ client, workflows: [amazonShippingOrderEmail]});
+export const { GET, POST, OPTIONS } = serve({ workflows: [AmazonShippingOrderConfirmation]});

@@ -19,25 +19,31 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface AmazonShippingEmailProps {
+interface AmazonShippingOrderConfirmationEmailProps {
   titleText?: string;
   topText?: string;
   components?: any;
   userFirstName?: string;
   orderArrivalLocation?: string;
   orderArrivalDate?: any;
+  orderTotalAmount?: BigInteger;
+  orderCurrency?: string;
+  packageTrackingLink?: string;
 }
 
 const baseUrl = 'https://react-email-demo-1sy86epzj-resend.vercel.app';
 const amazonLogo = 'https://assets.aboutamazon.com/dims4/default/c1f10ce/2147483647/strip/true/crop/1200x800+0+0/resize/324x216!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F75%2Fab%2F53dea402445d83406077763cfde7%2Famazon-logo-1200x800.png';
 
-export const AmazonShippingEmail = ({
+export const AmazonShippingOrderConfirmationEmail = ({
   userFirstName,
   orderArrivalLocation,
   orderArrivalDate,
+  orderCurrency,
+  orderTotalAmount,
+  packageTrackingLink,
   topText,
   components
-}: AmazonShippingEmailProps) => {
+}: AmazonShippingOrderConfirmationEmailProps) => {
   return (
     <Html>
         <Head>
@@ -89,7 +95,7 @@ export const AmazonShippingEmail = ({
                   </Text>
                 </Row>
                 <Row>
-                  <Button className="rounded-lg bg-yellow-400 text-black text-[14px] px-6 py-3">
+                  <Button className="rounded-lg bg-yellow-400 text-black text-[14px] px-6 py-3" href={packageTrackingLink}>
                     Track package
                   </Button>
                 </Row>
@@ -128,7 +134,7 @@ export const AmazonShippingEmail = ({
                 <Row>
                   <Hr />
                   <Text>
-                    <h3>Shipment Total: $259 </h3>
+                    <h3>Shipment Total: {orderCurrency}{orderTotalAmount} </h3>
                   </Text>
                   <Hr />
                 </Row>
@@ -277,7 +283,7 @@ export const AmazonShippingEmail = ({
   );
 };
 
-export default AmazonShippingEmail;
+export default AmazonShippingOrderConfirmationEmail;
 
 const main = {
   fontFamily: "Ember,Helvetica,Arial,sans-seri",
@@ -354,5 +360,5 @@ const logo = {
 
 
 export function renderShippingOrderEmail(inputs: any, payload: any) {
-  return render(<AmazonShippingEmail {...inputs} {...payload} />);
+  return render(<AmazonShippingOrderConfirmationEmail {...inputs} {...payload} />);
 }
