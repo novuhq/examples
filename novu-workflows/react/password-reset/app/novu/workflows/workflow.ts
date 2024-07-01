@@ -1,6 +1,6 @@
 import { workflow } from '@novu/framework';
 import { renderPasswordResetEmail } from '../emails/password-reset';
-import { zodControlSchema, zodPayloadSchema, jsonControlSchema, jsonPayloadSchema } from './schemas';
+import { zodControlSchema, zodPayloadSchema } from './schemas';
 
 export const DropboxPasswordResetEmail = workflow(
   "Dropbox Password Reset",
