@@ -1,6 +1,6 @@
 import { workflow } from '@novu/framework';
 import { renderLoginEmail } from '../emails/yelp-recent-login';
-import { zodControlSchema, zodPayloadSchema, jsonControlSchema, jsonPayloadSchema, zodPushControlSchema } from './schemas';
+import { zodControlSchema, zodPayloadSchema, zodPushControlSchema } from './schemas';
 
 export const YelpRecentLogin = workflow(
   "Yelp Recent Login",
