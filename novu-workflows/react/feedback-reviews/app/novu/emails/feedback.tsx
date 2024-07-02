@@ -29,7 +29,7 @@ export interface AirbnbReviewEmailProps {
     linkToAnswerThree?: string
     components?: any
     btnColor?: string
-    txtSize?: string
+    textSize?: string
     headerText?: string
     headerTextSize?: string
     headerTextColour?: string
@@ -42,7 +42,7 @@ const baseUrl = process.env.VERCEL_URL
 export const AirbnbReviewEmail = ({
     companyLogo = ``,
     bodyText = ".",
-    userName = "",
+    userName,
     questionOne = '',
     linkToAnswerOne = '',
     questionTwo = '',
@@ -51,7 +51,7 @@ export const AirbnbReviewEmail = ({
     linkToAnswerThree = '',
     components,
     btnColor,
-    txtSize,
+    textSize,
     headerText,
     headerTextSize,
     headerTextColour
@@ -62,7 +62,7 @@ export const AirbnbReviewEmail = ({
             <Container style={container}>
               <Section>
                   <Img
-                      src={companyLogo}
+                      src="https://react-email-demo-48zvx380u-resend.vercel.app/static/airbnb-logo.png"
                       width="96"
                       height="30"
                       alt="Airbnb"
@@ -91,8 +91,6 @@ export const AirbnbReviewEmail = ({
                                   </h1>
                               </Column>
                           ) : null}
-
-
 
                           {item.componentType === 'button' ? (
                               <Column>
@@ -164,7 +162,7 @@ export const AirbnbReviewEmail = ({
               <Section style={{ paddingBottom: "20px" }}>
                   <Row>
                       <Text style={{ ...heading, fontSize: headerTextSize, color: headerTextColour }}>{headerText}</Text>
-                      <Text style={review}>{bodyText}</Text>
+                      <Text style={review}>"{userName}, {bodyText}"</Text>
                       <Text style={paragraph}>
                           Now that the review period is over, we’ve posted {userName}
                           ’s review to your Airbnb profile.
@@ -174,7 +172,7 @@ export const AirbnbReviewEmail = ({
                           your feedback to {userName} using your Airbnb message thread.
                       </Text>
                       {/* -------------------------------------------------------------------------------------- */}
-                      <Button style={{ ...button, backgroundColor: btnColor, fontSize: txtSize }} href="https://airbnb.com/">
+                      <Button style={{ ...button, backgroundColor: btnColor, fontSize: textSize }} href="https://airbnb.com/">
                           Send My Feedback
                       </Button>
                   </Row>
@@ -299,6 +297,6 @@ const footer = {
 };
 
 
-export function feedbackEmail(payload: any) {
-    return render(<AirbnbReviewEmail {...payload} />);
+export function renderFeedbackEmail(controls: any, payload: any) {
+    return render(<AirbnbReviewEmail {...controls} {...payload} />);
 }

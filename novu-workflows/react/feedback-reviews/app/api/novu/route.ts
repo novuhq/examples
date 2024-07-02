@@ -1,4 +1,4 @@
 import { serve } from "@novu/framework/next";
-import { client, AirbnbReview } from "../../novu/client";
+import { AirbnbReview } from "../../novu/workflows";
 
-export const { GET, POST, OPTIONS } = serve({ client, workflows: [AirbnbReview] });
+export const { GET, POST, OPTIONS } = serve({ workflows: [AirbnbReview] });
