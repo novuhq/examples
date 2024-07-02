@@ -29,7 +29,7 @@ export const AirbnbReview = workflow(
       "send-email",
       async (controls) => {
         return {
-          subject: "You have a new review",
+          subject: controls.emailSubject,
           body: renderFeedbackEmail(controls, payload),
         };
       },

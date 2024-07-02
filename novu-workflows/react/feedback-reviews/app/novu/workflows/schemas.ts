@@ -12,7 +12,8 @@ export const zodControlSchema = z.object({
   questionThree: z.string().default("How do reviews work?"),
   linkToAnswerThree: z.string().url().default("https://airbnb.com/help/article/15"),
   btnColor: z.enum(['#ff5a5f', '#f00', '#f0f']).default("#ff5a5f"),
-  textSize: z.enum(["10px", "15px", "25px"]).default("15px")
+  textSize: z.enum(["10px", "15px", "25px"]).default("15px"),
+  emailSubject: z.string().default("You have a new review")
 });
 
 export const zodDelayControlSchema = z.object({
