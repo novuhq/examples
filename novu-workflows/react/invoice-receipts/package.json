@@ -1,5 +1,5 @@
 {
-  "name": "onboarding-notification",
+  "name": "invoice-receipts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@novu/framework": "0.24.3-alpha.5",
+    "@novu/framework": "0.24.3-alpha.13",
     "@react-email/components": "^0.0.17",
     "@react-email/tailwind": "0.0.16",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-email": "^2.1.2"
+    "react-email": "^2.1.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -177,8 +177,7 @@ export const AppleReceiptEmail = ({
         <Section>
         {components?.map((item: any, index: any) => {
               return (
-                <Section>
-
+                <Section key={index}>
                   {item.componentType === "heading" ? (
                     <Column>
                       <h1 style={{ textAlign: item.align }}>
