@@ -22,7 +22,6 @@ export const zodControlSchema = z.object({
     buttonMessage: z.string().default("I need a break"),
 });
 
-
 export const zodPayloadSchema = z.object({
     validationCode: z.number().int().default(123456),
     magicLinkURL: z.string().url().default('https://slack.com/magic/link')

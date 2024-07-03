@@ -1,31 +1,19 @@
-# Novu Bridge App
+## NEWSLETTER WORKFLOW
 
-This is a [Novu](https://novu.co/) bridge application bootstrapped with [`create-novu-app`](https://www.npmjs.com/package/create-novu-app)
+> Here's a Stackoverflow Workflow with Email Steps.
 
-## Getting Started
+## Steps
 
-To run the development server, run:
+1. Clone the repo and cd into `newsletter` directory.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Run `npm install && npm run dev` to run the project.
 
-By default, the [Next.js](https://nextjs.org/) server will start and your state can be synchronized with Novu Cloud via the Bridge Endpoint (default is `/api/novu`). Your server will by default run on [http://localhost:4000](http://localhost:4000).
+3. Open a new terminal and run `npx novu@latest dev`
 
-## Your first workflow
+## Visual look of the workflow
 
-Your first email workflow can be edited in `./app/novu/workflows.ts`. You can adjust your workflow to your liking.
+A non-technical person can edit the step controls to modify the notification content.
 
-## Learn More
+Step Controls
 
-To learn more about Novu, take a look at the following resources:
-
-- [Novu](https://novu.co/)
-
-You can check out [Novu GitHub repository](https://github.com/novuhq/novu) - your feedback and contributions are welcome!
+<img width="1713" alt="Screenshot 2024-07-03 at 06 00 08" src="https://github.com/novuhq/examples/assets/2946769/ad91e586-e1f7-41fe-bd02-2feccb1ef314">

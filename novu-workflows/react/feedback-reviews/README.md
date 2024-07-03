@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## REVIEW WORKFLOW
 
-## Getting Started
+> Here's an Airbnb Review Workflow with Email and Delay Steps.
 
-First, run the development server:
+## Steps
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repo and cd into `feedback-reviews` directory.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run `npm install && npm run dev` to run the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open a new terminal and run `npx novu@latest dev`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Visual look of the workflow
 
-## Learn More
+A non-technical person can edit the step controls to modify the notification content.
 
-To learn more about Next.js, take a look at the following resources:
+Step Controls
+![Step controls](https://github.com/novuhq/examples/assets/2946769/958f495f-8ec1-44b8-85b0-699514b34d3e)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Payload
+![Payload](https://github.com/novuhq/examples/assets/2946769/5d048542-a6ad-4119-929b-322bc37863d6)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
