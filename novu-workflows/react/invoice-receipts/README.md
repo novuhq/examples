@@ -1,6 +1,11 @@
-## INVOICE-RECEIPTS WORKFLOW
+## Apple Receipt Workflow Example
 
-> Here's an Apple Receipt Workflow with Email Steps.
+What you will find here:
+
+- A workflow for sending receipts over Email.
+- The ability for product teams to control the content and appearance of the receipt.
+- The ability for product teams to control ads in the receipt.
+- Apple designed receipt email as an inspiration.
 
 ## Steps
 
@@ -11,8 +16,6 @@
 3. Open a new terminal and run `npx novu@latest dev`
 
 ## Visual look of the workflow
-
-A non-technical person can edit the step controls to modify the notification content.
 
 Step Controls
 <img width="1711" alt="Screenshot 2024-07-02 at 17 16 57" src="https://github.com/novuhq/examples/assets/2946769/237b208c-b6d1-41b7-90d8-ce907a013067">

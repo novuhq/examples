@@ -1,6 +1,11 @@
-## OTP WORKFLOW
+## Slack One Time Password Workflow Example
 
-> Here's a Slack Confirmation OTP Workflow with Email, Push and SMS Steps.
+What you will find here:
+
+- A workflow for sending OTP over SMS, Email, and Push.
+- The ability for product teams to control content.
+- The ability for product teams to control magic link as well as OTP code.
+- Slack designed email as an inspiration.
 
 ## Steps
 
@@ -11,9 +16,6 @@
 3. Open a new terminal and run `npx novu@latest dev`
 
 ## Visual look of the workflow
-
-A non-technical person can edit the step controls of each of the steps to modify the notification content.
-
 
 ## Send email
 

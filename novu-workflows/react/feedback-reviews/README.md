@@ -1,6 +1,10 @@
-## REVIEW WORKFLOW
+## Airbnb Review Workflow Example
 
-> Here's an Airbnb Review Workflow with Email and Delay Steps.
+What you will find here:
+
+- A workflow for sending review over Email.
+- The ability for product teams to control the content and appearance of the reviews.
+- Airbnb designed email as an inspiration.
 
 ## Steps
 
@@ -11,8 +15,6 @@
 3. Open a new terminal and run `npx novu@latest dev`
 
 ## Visual look of the workflow
-
-A non-technical person can edit the step controls to modify the notification content.
 
 Step Controls
 ![Step controls](https://github.com/novuhq/examples/assets/2946769/958f495f-8ec1-44b8-85b0-699514b34d3e)

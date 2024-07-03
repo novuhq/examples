@@ -1,6 +1,10 @@
-## NEWSLETTER WORKFLOW
+## StackOverflow Newsletter Workflow Example
 
-> Here's a Stackoverflow Workflow with Email Steps.
+What you will find here:
+
+- A workflow for sending newsletters over Email.
+- The ability for product teams to control the content and appearance of the newsletter.
+- StackOverflow designed newsletter as an inspiration.
 
 ## Steps
 
@@ -11,8 +15,6 @@
 3. Open a new terminal and run `npx novu@latest dev`
 
 ## Visual look of the workflow
-
-A non-technical person can edit the step controls to modify the notification content.
 
 Step Controls
 

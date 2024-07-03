@@ -1,6 +1,11 @@
-## Shipping order confirmation workflow
+## Amazon Shipping Order Confirmation Workflow Example
 
-> Here's an Amazon shipping order confirmation workflow with email steps.
+What you will find here:
+
+- A workflow for sending shipping order confirmation over Email.
+- The ability for product teams to control content and appearance of the order confirmation email.
+- The ability for product teams to control goods and packages recommendations.
+- Amazon-like designed email as an inspiration.
 
 ## Steps
 
@@ -11,8 +16,6 @@
 3. Open a new terminal and run `npx novu@latest dev`
 
 ## Visual look of the workflow
-
-A non-technical person can edit the step controls of each of the steps to modify the notification content.
 
 ## Send email
 
