@@ -10,4 +10,4 @@ Each directory is a batteries-included Novu Nextjs app that you can simply clone
 
 2. Run `npm install` && `npm run dev` to run the project.
 
-3. Run `npx novu-labs@latest echo` to open the workflow.
+3. Run `npx novu@latest dev` to open the workflow.
