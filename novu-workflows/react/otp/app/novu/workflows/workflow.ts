@@ -3,7 +3,7 @@ import { renderOtpEmail } from '../emails/slack-otp';
 import { zodControlSchema, zodPayloadSchema, zodPushControlSchema, zodSmsControlSchema } from './schemas';
 
 export const SlackVerificationOTP = workflow(
-  "Slack Verify OTP",
+  "slack-verify-otp",
   async ({ step, payload }) => {
     await step.email(
       "send-email",

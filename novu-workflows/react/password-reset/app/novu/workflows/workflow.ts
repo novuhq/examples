@@ -3,7 +3,7 @@ import { renderPasswordResetEmail } from '../emails/password-reset';
 import { zodControlSchema, zodPayloadSchema } from './schemas';
 
 export const DropboxPasswordResetEmail = workflow(
-  "Dropbox Password Reset",
+  "dropbox-password-reset",
   async ({ step, payload }) => {
     await step.email(
       "send-email",

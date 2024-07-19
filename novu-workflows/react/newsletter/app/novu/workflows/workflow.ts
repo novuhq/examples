@@ -3,7 +3,7 @@ import { renderStackReactEmail } from '../emails/newsletter_stackoverflow';
 import { zodControlSchema, jsonSchema } from './schemas';
 
 export const StackWorkflowNewsletter = workflow(
-    "stack overflow",
+    "stack-overflow",
     async ({ step }) => {
       await step.email(
         "send-email",

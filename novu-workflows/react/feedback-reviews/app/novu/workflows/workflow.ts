@@ -3,7 +3,7 @@ import { renderFeedbackEmail } from '../emails/feedback';
 import { zodControlSchema, zodDelayControlSchema, zodPayloadSchema } from './schemas';
 
 export const AirbnbReview = workflow(
-  "Airbnb Review",
+  "airbnb-review",
   async ({ step, payload }) => {
     /**
      *  Delay Step
