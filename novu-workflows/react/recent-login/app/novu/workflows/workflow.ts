@@ -3,7 +3,7 @@ import { renderLoginEmail } from '../emails/yelp-recent-login';
 import { zodControlSchema, zodPayloadSchema, zodPushControlSchema } from './schemas';
 
 export const YelpRecentLogin = workflow(
-  "Yelp Recent Login",
+  "yelp-recent-login",
   async ({ step, payload }) => {
     /**
      *  Email Flow

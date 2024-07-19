@@ -3,7 +3,7 @@ import { renderShippingOrderEmail } from '../emails/shipping-order-confirmation'
 import { zodControlSchema, zodPayloadSchema, jsonControlSchema, jsonPayloadSchema } from './schemas';
 
 export const AmazonShippingOrderConfirmation = workflow(
-    "Amazon Shipping Order",
+    "amazon-shipping-order",
     async ({ step, payload }) => {
       await step.email(
         "send-email",

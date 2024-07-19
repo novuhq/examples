@@ -6,7 +6,7 @@ import { zodControlSchema, jsonSchema, zodPayloadSchema } from './schemas';
  * Apple Receipt Workflow
  */
 export const appleReceipt = workflow(
-  "Apple Receipt",
+  "apple-receipt",
   async ({ step, payload }) => {
     await step.email(
       "send-email",

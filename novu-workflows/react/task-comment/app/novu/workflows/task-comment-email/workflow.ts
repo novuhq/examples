@@ -3,7 +3,7 @@ import { renderNotionEmail } from "../../emails/notion-notification";
 import { delayControlSchema, notionControlSchema, payloadSchema } from "./schemas";
 
 export const taskComment = workflow(
-  "Task Comment Notion",
+  "task-comment-notion",
   async ({ step, payload }) => {
   await step.delay(
     'Delay Comment Send', 
