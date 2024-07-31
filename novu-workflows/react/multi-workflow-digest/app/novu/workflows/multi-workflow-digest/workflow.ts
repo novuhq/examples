@@ -1,6 +1,9 @@
 import { workflow } from "@novu/framework";
-import { renderEmail } from "../../emails/linear-digest";
-import { z } from "zod";
+import { renderLinearDigestEmail } from "../../emails/linear-digest";
+import {
+  ticketAssignedPayloadSchema,
+  commentOnTicketPayloadSchema,
+} from "./schemas";
 
 export const multiDigestWorkflow = workflow(
   "multi-digest",
@@ -17,10 +20,10 @@ export const multiDigestWorkflow = workflow(
     );
 
     // Send digested notifications via email
-    await step.email("send-email", async (controls) => {
+    await step.email("send-email", async () => {
       return {
-        subject: `${digestedNotifications.events.length} unread notifications on Novu`,
-        body: renderEmail(digestedNotifications.events),
+        subject: `${digestedNotifications.events.length} unread notifications on Novu - Linear`,
+        body: renderLinearDigestEmail(digestedNotifications.events),
       };
     });
   }
@@ -54,24 +57,7 @@ export const someoneCommentedOnTicket = workflow(
     });
   },
   {
-    payloadSchema: z.object({
-      type: z.string().default("ticket:comment"),
-      ticket: z.object({
-        id: z.string(),
-        title: z.string(),
-        descreption: z.string().optional(),
-        status: z.enum(["open", "closed"]).default("open").optional(),
-      }),
-      comment: z.object({
-        id: z.string(),
-        text: z.string(),
-        author: z.object({
-          id: z.string(),
-          name: z.string().optional(),
-          userName: z.string(),
-        }),
-      }),
-    }),
+    payloadSchema: commentOnTicketPayloadSchema,
   }
 );
 
@@ -80,7 +66,6 @@ export const ticketAssigned = workflow(
   async ({ step, payload, subscriber }) => {
     await step.inApp("send-inbox-notification", async () => {
       return {
-        // body: `${payload.comment.author.userName} commented ${payload.comment.text} on ticket ${payload.ticket.id}`,
         body: `${payload.assign.author.userName} assigned ticket ${payload.ticket.id} ${payload.ticket.title} to you.`,
       };
     });
@@ -104,21 +89,6 @@ export const ticketAssigned = workflow(
     });
   },
   {
-    payloadSchema: z.object({
-      type: z.string().default("ticket:assign"),
-      ticket: z.object({
-        id: z.string(),
-        title: z.string(),
-        descreption: z.string().optional(),
-        status: z.enum(["open", "closed"]).default("open").optional(),
-      }),
-      assign: z.object({
-        author: z.object({
-          id: z.string(),
-          name: z.string().optional(),
-          userName: z.string(),
-        }),
-      }),
-    }),
+    payloadSchema: ticketAssignedPayloadSchema,
   }
 );

@@ -1,1 +1,1 @@
-export * from "./multi-digest-workflow";
+export * from "./multi-workflow-digest";

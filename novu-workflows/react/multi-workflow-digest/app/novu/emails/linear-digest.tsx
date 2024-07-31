@@ -12,41 +12,166 @@ import {
   Section,
   Text,
   render,
+  Row,
 } from "@react-email/components";
 import * as React from "react";
 
-interface LinearLoginCodeEmailProps {
-  validationCode?: string;
+import {
+  CommentSchema,
+  AuthorSchema,
+  TicketAssignedSchema,
+  CommentOnTicketSchema,
+} from "../workflows/multi-workflow-digest/types";
+interface LinearDigestEmailProps {
+  notifications?: [CommentOnTicketSchema | TicketAssignedSchema];
 }
 
-export const LinearLoginCodeEmail = ({
-  validationCode,
-}: LinearLoginCodeEmailProps) => (
+interface CommentRowProps {
+  comment: CommentSchema;
+  ticketId: string;
+  ticketTitle: string;
+}
+
+interface AssignRowProps {
+  ticketId: string;
+  ticketTitle: string;
+  author: AuthorSchema;
+}
+
+const CommentText = ({ comment }: { comment: string }) => {
+  return <div style={code}>{comment}</div>;
+};
+
+const avatarURL =
+  "https://i.pinimg.com/736x/12/b6/9c/12b69c03188762a06008e9d7151832d4.jpg";
+
+export const CommentRow = ({
+  comment,
+  ticketId,
+  ticketTitle,
+}: CommentRowProps) => {
+  return (
+    <Row>
+      <Text>
+        <span style={disabledText}>{ticketId}</span> <b>{ticketTitle}</b>
+      </Text>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Img
+          src={comment.author.avatar ?? avatarURL}
+          width="20"
+          height={"20"}
+          style={{ display: "inline", marginRight: "10px" }}
+        />
+        <Text
+          style={{
+            display: "inline",
+            fontSize: "14px",
+            lineHeight: "1.4",
+            margin: 0,
+          }}
+        >
+          {comment.author.userName} mentioned you{" "}
+          <Link
+            href={`https://linear.app/issue/${ticketId}#comment-${comment.id}`}
+          >
+            in a comment
+          </Link>
+        </Text>
+      </div>
+      <CommentText comment={comment.text} />
+      <Hr style={hr} />
+    </Row>
+  );
+};
+
+const AssignRow = ({ author, ticketId, ticketTitle }: AssignRowProps) => {
+  return (
+    <Row>
+      <Text>
+        <span style={disabledText}>{ticketId}</span> <b>{ticketTitle}</b>
+      </Text>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Img
+          src={author.avatar ?? avatarURL}
+          width="20"
+          height={"20"}
+          style={{ display: "inline", marginRight: "10px" }}
+        />
+        <Text
+          style={{
+            display: "inline",
+            fontSize: "14px",
+            lineHeight: "1.4",
+            margin: 0,
+          }}
+        >
+          {author.userName} assigned this issue to you
+        </Text>
+      </div>
+      <Hr style={hr} />
+    </Row>
+  );
+};
+
+export const LinearDigestEmailNotification = ({
+  notifications,
+}: LinearDigestEmailProps) => (
   <Html>
     <Head />
-    <Preview>Your login code for Linear</Preview>
+    <Preview>{`You have ${notifications?.length} unread notifications on linear`}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={"/linear-logo.png"}
+          src={
+            "https://asset.brandfetch.io/iduDa181eM/idYYbqOlKi.png?updated=1667563279373"
+          }
           width="42"
           height="42"
-          alt="Linear"
+          alt="Linear Logo"
           style={logo}
         />
-        <Heading style={heading}>Your login code for Linear</Heading>
+        <Heading
+          style={heading}
+        >{`You have ${notifications?.length} unread notifications on linear`}</Heading>
+        <Hr style={hr} />
+        {notifications?.map(
+          (notification: CommentOnTicketSchema | TicketAssignedSchema) => {
+            if (
+              notification?.type === "ticket:comment" &&
+              "comment" in notification
+            ) {
+              return (
+                <CommentRow
+                  comment={notification.comment}
+                  ticketId={notification?.ticket.id}
+                  ticketTitle={notification?.ticket.title}
+                  key={notification.ticket.id}
+                />
+              );
+            }
+
+            if (
+              notification?.type === "ticket:assign" &&
+              "assign" in notification
+            ) {
+              return (
+                <AssignRow
+                  author={notification?.assign?.author}
+                  ticketId={notification?.ticket.id}
+                  ticketTitle={notification?.ticket.title}
+                  key={notification.ticket.id}
+                />
+              );
+            }
+          }
+        )}
         <Section style={buttonContainer}>
-          <Button style={button} href="https://linear.app">
-            Login to Linear
+          <Button style={button} href={`https://linear.app/novu/inbox`}>
+            Open Your Inbox
           </Button>
         </Section>
-        <Text style={paragraph}>
-          This link and code will only be valid for the next 5 minutes. If the
-          link does not work, you can use the login verification code directly:
-        </Text>
-        <code style={code}>{validationCode}</code>
-        <Hr style={hr} />
-        <Link href="https://linear.app" style={reportLink}>
+        <Hr />
+        <Link href="https://linear.app" style={disabledText}>
           Linear
         </Link>
       </Container>
@@ -54,14 +179,12 @@ export const LinearLoginCodeEmail = ({
   </Html>
 );
 
-LinearLoginCodeEmail.PreviewProps = {
-  validationCode: "tt226-5398x",
-} as LinearLoginCodeEmailProps;
+export default LinearDigestEmailNotification;
 
-export default LinearLoginCodeEmail;
-
-export function renderEmail(notifications: any) {
-  return render(<LinearLoginCodeEmail validationCode="3456" />);
+export function renderLinearDigestEmail(notifications: any) {
+  return render(
+    <LinearDigestEmailNotification notifications={notifications} />
+  );
 }
 
 const logo = {
@@ -86,20 +209,13 @@ const heading = {
   fontSize: "24px",
   letterSpacing: "-0.5px",
   lineHeight: "1.3",
-  fontWeight: "400",
+  fontWeight: "600",
   color: "#484848",
   padding: "17px 0 0",
 };
 
-const paragraph = {
-  margin: "0 0 15px",
-  fontSize: "15px",
-  lineHeight: "1.4",
-  color: "#3c4149",
-};
-
 const buttonContainer = {
-  padding: "27px 0 27px",
+  padding: "14px 0 14px",
 };
 
 const button = {
@@ -110,27 +226,30 @@ const button = {
   fontSize: "15px",
   textDecoration: "none",
   textAlign: "center" as const,
-  display: "block",
   padding: "11px 23px",
+  width: "auto",
 };
 
-const reportLink = {
+const disabledText = {
   fontSize: "14px",
   color: "#b4becc",
 };
 
 const hr = {
   borderColor: "#dfe1e4",
-  margin: "42px 0 26px",
+  marginTop: "20px",
 };
 
 const code = {
   fontFamily: "monospace",
-  fontWeight: "700",
-  padding: "1px 4px",
-  backgroundColor: "#dfe1e4",
+  fontWeight: "500",
+  padding: "5px 4px",
+  backgroundColor: "#f8f9fb",
   letterSpacing: "-0.3px",
-  fontSize: "21px",
+  fontSize: "14px",
+  lineHeight: "1.4",
   borderRadius: "4px",
   color: "#3c4149",
+  marginLeft: "25px",
+  marginTop: "10px",
 };
