@@ -35,3 +35,8 @@ export const ticketAssignedPayloadSchema = z.object({
     author: authorSchema,
   }),
 });
+
+export const digestWorkflowPayloadSchema = z.union([
+  commentOnTicketPayloadSchema,
+  ticketAssignedPayloadSchema,
+]);

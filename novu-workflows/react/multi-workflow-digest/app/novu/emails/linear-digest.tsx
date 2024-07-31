@@ -22,10 +22,87 @@ import {
   TicketAssignedSchema,
   CommentOnTicketSchema,
 } from "../workflows/multi-workflow-digest/types";
+
+type Event = {
+  id: string;
+  time: string;
+  payload: CommentOnTicketSchema | TicketAssignedSchema;
+};
+
 interface LinearDigestEmailProps {
-  notifications?: [CommentOnTicketSchema | TicketAssignedSchema];
+  notifications?: Event[];
 }
 
+const events = [
+  {
+    type: "ticket:assign",
+    workspaceId: "novu",
+    ticket: {
+      id: "ticket_1",
+      title: "I18n is not working in SMS and Chat steps",
+      descreption: "I18n is not working in SMS and Chat steps",
+      status: "open",
+    },
+    assign: {
+      author: {
+        id: "user_1",
+        name: "Pawan",
+        userName: "jainpawan21",
+      },
+    },
+  },
+  {
+    type: "ticket:assign",
+    workspaceId: "novu",
+    ticket: {
+      id: "ticket_1",
+      title: "I18n is not working in SMS and Chat steps",
+      descreption: "I18n is not working in SMS and Chat steps",
+      status: "open",
+    },
+    assign: {
+      author: {
+        id: "user_1",
+        name: "Pawan",
+        userName: "jainpawan21",
+      },
+    },
+  },
+  {
+    type: "ticket:assign",
+    workspaceId: "novu",
+    ticket: {
+      id: "ticket_1",
+      title: "I18n is not working in SMS and Chat steps",
+      descreption: "I18n is not working in SMS and Chat steps",
+      status: "open",
+    },
+    assign: {
+      author: {
+        id: "user_1",
+        name: "Pawan",
+        userName: "jainpawan21",
+      },
+    },
+  },
+  {
+    type: "ticket:assign",
+    workspaceId: "novu",
+    ticket: {
+      id: "ticket_1",
+      title: "I18n is not working in SMS and Chat steps",
+      descreption: "I18n is not working in SMS and Chat steps",
+      status: "open",
+    },
+    assign: {
+      author: {
+        id: "user_1",
+        name: "Pawan",
+        userName: "jainpawan21",
+      },
+    },
+  },
+];
 interface CommentRowProps {
   comment: CommentSchema;
   ticketId: string;
@@ -134,37 +211,38 @@ export const LinearDigestEmailNotification = ({
           style={heading}
         >{`You have ${notifications?.length} unread notifications on linear`}</Heading>
         <Hr style={hr} />
-        {notifications?.map(
-          (notification: CommentOnTicketSchema | TicketAssignedSchema) => {
-            if (
-              notification?.type === "ticket:comment" &&
-              "comment" in notification
-            ) {
-              return (
-                <CommentRow
-                  comment={notification.comment}
-                  ticketId={notification?.ticket.id}
-                  ticketTitle={notification?.ticket.title}
-                  key={notification.ticket.id}
-                />
-              );
-            }
-
-            if (
-              notification?.type === "ticket:assign" &&
-              "assign" in notification
-            ) {
-              return (
-                <AssignRow
-                  author={notification?.assign?.author}
-                  ticketId={notification?.ticket.id}
-                  ticketTitle={notification?.ticket.title}
-                  key={notification.ticket.id}
-                />
-              );
-            }
+        {notifications?.map((notification) => {
+          const notificationEvent = notification.payload;
+          if (
+            notificationEvent?.type === "ticket:comment" &&
+            "comment" in notificationEvent
+          ) {
+            return (
+              <CommentRow
+                comment={notificationEvent.comment}
+                ticketId={notificationEvent?.ticket.id}
+                ticketTitle={notificationEvent?.ticket.title}
+                key={notification.id}
+              />
+            );
           }
-        )}
+
+          if (
+            notificationEvent?.type === "ticket:assign" &&
+            "assign" in notificationEvent
+          ) {
+            return (
+              <AssignRow
+                author={notificationEvent?.assign?.author}
+                ticketId={notificationEvent?.ticket.id}
+                ticketTitle={notificationEvent?.ticket.title}
+                key={notification.id}
+              />
+            );
+          } else {
+            return <></>;
+          }
+        })}
         <Section style={buttonContainer}>
           <Button style={button} href={`https://linear.app/novu/inbox`}>
             Open Your Inbox
@@ -180,6 +258,10 @@ export const LinearDigestEmailNotification = ({
 );
 
 export default LinearDigestEmailNotification;
+
+LinearDigestEmailNotification.PreviewProps = {
+  notifications: events as unknown as Event[],
+} as LinearDigestEmailProps;
 
 export function renderLinearDigestEmail(notifications: any) {
   return render(

@@ -3,6 +3,7 @@ import { renderLinearDigestEmail } from "../../emails/linear-digest";
 import {
   ticketAssignedPayloadSchema,
   commentOnTicketPayloadSchema,
+  digestWorkflowPayloadSchema,
 } from "./schemas";
 
 export const multiDigestWorkflow = workflow(
@@ -13,8 +14,8 @@ export const multiDigestWorkflow = workflow(
       "digest-all-notifications",
       async () => {
         return {
-          amount: 30,
-          unit: "seconds",
+          amount: 2,
+          unit: "minutes",
         };
       }
     );
@@ -26,6 +27,9 @@ export const multiDigestWorkflow = workflow(
         body: renderLinearDigestEmail(digestedNotifications.events),
       };
     });
+  },
+  {
+    payloadSchema: digestWorkflowPayloadSchema,
   }
 );
 
@@ -42,7 +46,7 @@ export const someoneCommentedOnTicket = workflow(
       try {
         await multiDigestWorkflow.trigger({
           to: subscriber?.subscriberId as string,
-          payload: {},
+          payload: payload,
         });
         return {
           success: true,
