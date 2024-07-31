@@ -36,7 +36,7 @@ export const ticketAssignedPayloadSchema = z.object({
   }),
 });
 
-export const digestWorkflowPayloadSchema = z.union([
+export const summaryWorkflowPayloadSchema = z.union([
   commentOnTicketPayloadSchema,
   ticketAssignedPayloadSchema,
 ]);
