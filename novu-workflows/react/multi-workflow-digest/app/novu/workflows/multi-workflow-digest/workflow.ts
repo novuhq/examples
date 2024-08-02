@@ -1,4 +1,4 @@
-import { workflow } from "@novu/framework";
+import { CronExpression, workflow } from "@novu/framework";
 import { renderLinearDigestEmail } from "../../emails/linear-digest";
 import {
   ticketAssignedPayloadSchema,
@@ -14,8 +14,7 @@ export const summaryWorkflow = workflow(
       "digest-all-notifications",
       async () => {
         return {
-          amount: 2,
-          unit: "minutes",
+          cron: CronExpression.EVERY_DAY_AT_8AM,
         };
       }
     );
