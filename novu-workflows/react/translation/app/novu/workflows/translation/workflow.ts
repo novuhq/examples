@@ -6,10 +6,18 @@ i18next.init({
   fallbackLng: 'en',
   resources: {
     en: {
-      translation: require('./locales/en.json'),
+      translation: {
+        welcomeEmailSubject: 'Welcome {{name}} to Facebook',
+        welcomeEmailBody:
+          'Welcome to Facebook, you can now edit your profile {{username}} and connect with your friends and family',
+      },
     },
     de: {
-      translation: require('./locales/de.json'),
+      translation: {
+        welcomeEmailSubject: 'Willkommen {{name}} auf Facebook',
+        welcomeEmailBody:
+          'Willkommen bei Facebook. Sie können jetzt Ihr Profil {{username}} bearbeiten und mit Ihren Freunden und Ihrer Familie in Kontakt treten',
+      },
     },
   },
 });
@@ -18,12 +26,12 @@ export const welcomeWorkflow = workflow(
   'welcome-workflow',
   async ({ step, subscriber }) => {
     await step.email('welcome-email', async () => {
-      i18next.getFixedT(subscriber.locale);
+      const t = i18next.getFixedT(subscriber.locale);
 
-      const subject = i18next.t('welcomeEmailSubject', {
+      const subject = t('welcomeEmailSubject', {
         name: subscriber.name,
       });
-      const body = i18next.t('welcomeEmailBody', { name: subscriber.name });
+      const body = t('welcomeEmailBody', { username: subscriber.username });
       return {
         subject,
         body: renderEmail(subject, body),
