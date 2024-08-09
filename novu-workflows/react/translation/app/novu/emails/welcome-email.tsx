@@ -126,6 +126,7 @@ const link: React.CSSProperties = {
   border: '0 solid #9147ff',
   borderRadius: '3px',
   color: '#fff',
+  background: '#9147ff',
   display: 'inline-block',
   fontFamily: 'Helvetica,Arial,sans-serif',
   fontSize: '18px',
