@@ -2,53 +2,152 @@ import {
   Body,
   Container,
   Head,
-  Heading,
   Html,
   Preview,
+  Section,
+  Text,
+  Link,
+  Img,
+  Row,
+  Column,
   render,
 } from '@react-email/components';
 import * as React from 'react';
 
-interface EmailProps {
+const baseUrl = process.env.IMAGE_BASE_URL;
+
+export const TwitchResetPasswordEmail = ({
+  subject,
+  body,
+  linkText,
+  body2,
+}: {
   subject: string;
   body: string;
-}
+  linkText: string;
+  body2: string;
+}) => {
+  return (
+    <Html>
+      <Head />
+      <Preview>{subject}</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          <Section style={logo}>
+            <Img width={114} src={`${baseUrl}/twitch-logo.png`} />
+          </Section>
+          <Section style={sectionsBorders}>
+            <Row>
+              <Column style={sectionBorder} />
+              <Column style={sectionCenter} />
+              <Column style={sectionBorder} />
+            </Row>
+          </Section>
+          <Section style={content}>
+            <Text style={paragraph}>{body}</Text>
+            <Link href='https://www.twitch.tv' style={link}>
+              {linkText}
+            </Link>
+            <Text style={paragraph}>{body2}</Text>
+          </Section>
+        </Container>
+        <Section style={footer}>
+          <Row>
+            <Column align='right' style={{ width: '50%', paddingRight: '8px' }}>
+              <Img src={`${baseUrl}/twitch-icon-twitter.png`} />
+            </Column>
+            <Column align='left' style={{ width: '50%', paddingLeft: '8px' }}>
+              <Img src={`${baseUrl}/twitch-icon-facebook.png`} />
+            </Column>
+          </Row>
+          <Row>
+            <Text style={{ textAlign: 'center', color: '#706a7b' }}>
+              © 2022 Twitch, All Rights Reserved <br />
+              350 Bush Street, 2nd Floor, San Francisco, CA, 94104 - USA
+            </Text>
+          </Row>
+        </Section>
+      </Body>
+    </Html>
+  );
+};
 
-export const EmailNotification = ({ subject, body }: EmailProps) => (
-  <Html>
-    <Head />
-    <Preview>{subject}</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Heading style={heading}>{body}</Heading>
-      </Container>
-    </Body>
-  </Html>
-);
-
-export default EmailNotification;
-
-export function renderEmail(subject: string, body: string) {
-  return render(<EmailNotification subject={subject} body={body} />);
-}
+const fontFamily = 'HelveticaNeue,Helvetica,Arial,sans-serif';
 
 const main = {
-  backgroundColor: '#ffffff',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  backgroundColor: '#efeef1',
+  fontFamily,
+};
+
+const paragraph = {
+  lineHeight: 1.5,
+  fontSize: 14,
 };
 
 const container = {
-  margin: '0 auto',
-  padding: '20px 0 48px',
-  maxWidth: '560px',
+  maxWidth: '580px',
+  margin: '30px auto',
+  backgroundColor: '#ffffff',
 };
 
-const heading = {
-  fontSize: '24px',
-  letterSpacing: '-0.5px',
-  lineHeight: '1.3',
-  fontWeight: '600',
-  color: '#484848',
-  padding: '17px 0 0',
+const footer = {
+  maxWidth: '580px',
+  margin: '0 auto',
 };
+
+const content = {
+  padding: '5px 20px 10px 20px',
+};
+
+const logo = {
+  display: 'flex',
+  justifyContent: 'center',
+  alingItems: 'center',
+  padding: 30,
+};
+
+const sectionsBorders = {
+  width: '100%',
+  display: 'flex',
+};
+
+const sectionBorder = {
+  borderBottom: '1px solid rgb(238,238,238)',
+  width: '249px',
+};
+
+const sectionCenter = {
+  borderBottom: '1px solid rgb(145,71,255)',
+  width: '102px',
+};
+
+const link: React.CSSProperties = {
+  margin: 0,
+  border: '0 solid #9147ff',
+  borderRadius: '3px',
+  color: '#fff',
+  display: 'inline-block',
+  fontFamily: 'Helvetica,Arial,sans-serif',
+  fontSize: '18px',
+  fontWeight: 'regular',
+  lineHeight: 1.3,
+  padding: '10px 30px 10px 30px',
+  textAlign: 'left',
+  textDecoration: 'none',
+};
+
+export function renderEmail(
+  subject: string,
+  body: string,
+  linkText: string,
+  body2: string
+) {
+  return render(
+    <TwitchResetPasswordEmail
+      subject={subject}
+      body={body}
+      linkText={linkText}
+      body2={body2}
+    />
+  );
+}
