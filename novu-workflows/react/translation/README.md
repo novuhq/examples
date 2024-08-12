@@ -1,40 +1,24 @@
-# Novu Bridge App
+## Twitch Translated Workflow
 
-This is a [Novu](https://novu.co/) bridge application bootstrapped with [`npx novu init`](https://www.npmjs.com/package/novu)
+What you will find here:
 
-## Getting Started
+- A workflow for sending translated content.
+- The ability for product teams to control default language.
+- Twitch designed email as an inspiration.
 
-- Clone the repository
-```bash
-git clone https://github.com/novuhq/examples
-```
+## Steps
 
-- Navigate to multi digest workflow directry
-```bash
-cd examples/novu-workflows/react/multi-workflow-digest
-```
+1. Clone the repo and cd into `translation` directory.
 
-- Install the dependencies
-```bash
-npm install
-```
+2. Run `npm install && npm run dev` to run the project.
 
-- Run the development server
-```bash
-npm run dev
-```
+3. Open a new terminal and run `npx novu@latest dev`
 
-By default, the [Next.js](https://nextjs.org/) server will start and your state can be synchronized with Novu Cloud via the Bridge Endpoint (default is `/api/novu`). Your server will by default run on [http://localhost:4000](http://localhost:4000).
+## Send email
 
-## Your first workflow
+English
+<img width="1697" alt="Screenshot 2024-08-12 at 07 30 36" src="./asset/Screenshot 2024-08-12 at 07.30.36.png">
 
-Your first email workflow can be edited in `./app/novu/workflows.ts`. You can adjust your workflow to your liking.
 
-## Learn More
-
-To learn more about Novu, take a look at the following resources:
-
-- [Novu](https://novu.co/)
-- [Next.js Quick Start Guide](https://docs.novu.co/quickstart/nextjs)
-
-You can check out [Novu GitHub repository](https://github.com/novuhq/novu) - your feedback and contributions are welcome!
+German
+<img width="1698" alt="Screenshot 2024-08-12 at 07 31 00" src="./asset/Screenshot 2024-08-12 at 07.31.00.png">
