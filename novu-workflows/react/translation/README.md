@@ -17,8 +17,8 @@ What you will find here:
 ## Send email
 
 English
-<img width="1697" alt="Screenshot 2024-08-12 at 07 30 36" src="./asset/Screenshot 2024-08-12 at 07.30.36.png">
+<img width="1697" alt="Email in english" src="./asset/en.png">
 
 
 German
-<img width="1698" alt="Screenshot 2024-08-12 at 07 31 00" src="./asset/Screenshot 2024-08-12 at 07.31.00.png">
+<img width="1698" alt="Email in german" src="./asset/de.png">

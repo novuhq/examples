@@ -45,9 +45,11 @@ export const TwitchResetPasswordEmail = ({
           </Section>
           <Section style={content}>
             <Text style={paragraph}>{body}</Text>
-            <Link href='https://www.twitch.tv' style={link}>
-              {linkText}
-            </Link>
+            <Section style={center}>
+              <Link href='https://www.twitch.tv' style={link}>
+                {linkText}
+              </Link>
+            </Section>
             <Text style={paragraph}>{body2}</Text>
           </Section>
         </Container>
@@ -119,6 +121,12 @@ const sectionBorder = {
 const sectionCenter = {
   borderBottom: '1px solid rgb(145,71,255)',
   width: '102px',
+};
+
+const center = {
+  display: 'flex',
+  justifyContent: 'center',
+  alingItems: 'center',
 };
 
 const link: React.CSSProperties = {
