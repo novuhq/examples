@@ -8,20 +8,20 @@ i18next.init({
     en: {
       translation: {
         welcomeEmailSubject: 'Welcome to Twitch, {{username}}!',
-        welcomeEmailBody:
+        welcomeEmailIntroduction:
           'We’re glad you could join us. Twitch has a huge, passionate community ready to watch and celebrate all the things you’re into, and we’ve saved a seat just for you.',
         linkText: 'WATCH NOW',
-        welcomeEmailBody2:
+        welcomeEmailConclusion:
           'If you want to watch it, someone on Twitch streams it: games, anime, fitness, cosplay, esports, cooking, music, meditation. Take a look around, find a few channels to call home, and cozy up in chat.',
       },
     },
     de: {
       translation: {
         welcomeEmailSubject: 'Willkommen bei Twitch, {{username}}!',
-        welcomeEmailBody:
+        welcomeEmailIntroduction:
           'Wir freuen uns, dass Sie sich uns anschließen konnten. Twitch hat eine riesige, leidenschaftliche Community, die bereit ist, alles zu sehen und zu feiern, was Sie interessiert, und wir haben einen Platz nur für Sie reserviert.',
         linkText: 'JETZT ANSEHEN',
-        welcomeEmailBody2:
+        welcomeEmailConclusion:
           'If you want to watch it, someone on Twitch streams it: games, anime, fitness, cosplay, esports, cooking, music, meditation. Take a look around, find a few channels to call home, and cozy up in chat.',
       },
     },
@@ -35,23 +35,23 @@ export const welcomeWorkflow = workflow(
       'welcome-email',
       async (controls) => {
         const translate = i18next.getFixedT(
-          subscriber?.locale || controls.fallbackLocale
+          subscriber?.locale || controls.defaultLocale
         );
 
         const subject = translate('welcomeEmailSubject', {
           username: subscriber?.username || 'Novu',
         });
-        const body = translate('welcomeEmailBody');
+        const welcomeEmailIntroduction = translate('welcomeEmailIntroduction');
         const linkText = translate('linkText');
-        const body2 = translate('welcomeEmailBody2');
+        const welcomeEmailConclusion = translate('welcomeEmailConclusion');
         return {
           subject,
-          body: renderEmail(subject, body, linkText, body2),
+          body: renderEmail(subject, welcomeEmailIntroduction, linkText, welcomeEmailConclusion),
         };
       },
       {
         controlSchema: z.object({
-          fallbackLocale: z.string().default('en').optional(),
+          defaultLocale: z.string().default('en').optional(),
         }),
       }
     );

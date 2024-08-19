@@ -64,7 +64,7 @@ export const TwitchResetPasswordEmail = ({
           </Row>
           <Row>
             <Text style={{ textAlign: 'center', color: '#706a7b' }}>
-              © 2022 Twitch, All Rights Reserved <br />
+              © {new Date().getFullYear()} Twitch, All Rights Reserved <br />
               350 Bush Street, 2nd Floor, San Francisco, CA, 94104 - USA
             </Text>
           </Row>
