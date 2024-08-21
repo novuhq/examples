@@ -1,9 +1,9 @@
 import { workflow } from '@novu/framework';
 import { renderEmail } from '../../emails/welcome-email';
-import i18next from 'i18next';
+import { createInstance, InitOptions } from 'i18next';
 import { z } from 'zod';
 
-i18next.init({
+const i18nOptions: InitOptions = {
   resources: {
     en: {
       translation: {
@@ -26,7 +26,7 @@ i18next.init({
       },
     },
   },
-});
+};
 
 export const welcomeWorkflow = workflow(
   'welcome-workflow',
@@ -34,6 +34,8 @@ export const welcomeWorkflow = workflow(
     await step.email(
       'welcome-email',
       async (controls) => {
+        const i18next = createInstance(i18nOptions);
+
         const translate = i18next.getFixedT(
           subscriber?.locale || controls.defaultLocale
         );
@@ -46,7 +48,12 @@ export const welcomeWorkflow = workflow(
         const welcomeEmailConclusion = translate('welcomeEmailConclusion');
         return {
           subject,
-          body: renderEmail(subject, welcomeEmailIntroduction, linkText, welcomeEmailConclusion),
+          body: renderEmail(
+            subject,
+            welcomeEmailIntroduction,
+            linkText,
+            welcomeEmailConclusion
+          ),
         };
       },
       {
