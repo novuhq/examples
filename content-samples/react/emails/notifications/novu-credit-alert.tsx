@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Body,
+  Column,
   Container,
   Head,
   Heading,
@@ -9,8 +10,9 @@ import {
   Img,
   Link,
   Preview,
+  Row,
   Section,
-  Text
+  Text,
 } from '@react-email/components';
 
 interface NovuCreditUsageAlertEmailProps {
@@ -70,7 +72,7 @@ const NovuCreditUsageAlertEmail = ({
               <strong style={h2}>Your Credit Status</strong>
             </Head>
             <div style={progressBar}>
-              <div style={{...progressFill, width: `${usagePrecent}%`}}></div>
+              <div style={progressFill(usagePrecent)}></div>
             </div>
             <Text style={text}>Credit used: <strong>{usage}/{amount}</strong></Text>
           </Section>
@@ -113,17 +115,24 @@ const NovuCreditUsageAlertEmail = ({
 
           <Hr style={hr} />
 
-          <section style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-          <Img
-            src={logoImg}
-            width="42"
-            height="42"
-            alt={companyName}
-          />
-          <Text style={footer}>
-          {companyName}<br/>{address}
-          </Text>
-          </section>
+          <Section>
+            <Row>
+              <Column style={logoColumn}>
+                <Img
+                  src={logoImg}
+                  width="42"
+                  height="42"
+                  alt={companyName}
+                />
+              </Column>
+              <Column>
+                <Text style={companyDetails}>
+                  {`${companyName}
+                  ${address}`}
+                </Text>
+              </Column>
+            </Row>
+          </Section>
           
 
           <Text style={footer}>
@@ -212,11 +221,12 @@ const progressBar = {
   marginTop: '8px'
 };
 
-const progressFill = {
+const progressFill = (usagePrecent: number) => ({
   backgroundColor: '#DA0685',
   height: '16px',
   borderRadius: '9999px',
-};
+  width: `${usagePrecent}%`
+});
 
 const button = {
   backgroundColor: '#3b82f6',
@@ -241,6 +251,16 @@ const footer = {
   lineHeight: '24px',
 };
 
+const logoColumn = {
+  width: '42px',
+  paddingRight: '12px',
+};
+
+const companyDetails = {
+  ...footer,
+  whiteSpace: 'pre-line'
+};
+
 const link = {
   color: '#3b82f6',
   textDecoration: 'none',
@@ -260,7 +280,7 @@ const highlight = {
 NovuCreditUsageAlertEmail.PreviewProps = {
     companyName: "Novu",
     logoImg: `https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`,
-    address: '',
+    address: 'Tel Aviv, Israel',
     linkToPricing: "https://novu.co/pricing/?utm_campaign=docs_top_nav",
     linkToUnsubscribe: "https://google.com",
     customerName: "Mussi",
