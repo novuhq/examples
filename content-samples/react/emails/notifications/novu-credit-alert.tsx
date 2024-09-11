@@ -38,7 +38,7 @@ const NovuCreditUsageAlertEmail = ({
     amount,
     packagesList
 }: NovuCreditUsageAlertEmailProps) => {
-  const usagePrecent = Math.round(usage / amount * 100);
+  const usagePrecent: number = Math.round(usage / amount * 100);
   return (
     <Html>
       <Head />
@@ -46,11 +46,7 @@ const NovuCreditUsageAlertEmail = ({
       <Body style={main}>
         <Container style={container}>
           <Section style={iconContainer}>
-          <svg style={icon} viewBox="0 0 24 24">
-             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-             <line x1="12" y1="9" x2="12" y2="13"></line>
-             <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
+            <AlertIcon/>
           </Section>
           <Heading style={h1}>Credit Usage Alert</Heading>
           
@@ -62,18 +58,10 @@ const NovuCreditUsageAlertEmail = ({
 
           <Section style={infoBox}>
             <Head>
-            <svg style={infoIcon} 
-            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            >
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
+              <LineChartIcon/>
               <strong style={h2}>Your Credit Status</strong>
             </Head>
-            <div style={progressBar}>
-              <div style={progressFill(usagePrecent)}></div>
-            </div>
+            <ProgressBar usagePrecent={usagePrecent}/>
             <Text style={text}>Credit used: <strong>{usage}/{amount}</strong></Text>
           </Section>
 
@@ -83,18 +71,14 @@ const NovuCreditUsageAlertEmail = ({
 
           <Section style={infoBox}>
             <Head>
-            <svg style={infoIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                <line x1="1" y1="10" x2="23" y2="10"></line>
-             </svg>
+              <CreditCardIcon/>
               <strong style={h2}>Purchase Additional Credits</strong>
               </Head>
             <Text style={text}>Choose the package that suits you:</Text>
             <ul style={list}>
                 {
                   packagesList.map(({name, amount, price}, indx) => 
-                    <li key={indx}> {name}: {amount} - {price} </li>
-                  )
+                    <li key={indx}> {name}: {amount} - {price} </li> )
                 }
             </ul>
             <Link
@@ -144,6 +128,38 @@ const NovuCreditUsageAlertEmail = ({
       </Body>
     </Html>
   );
+};
+
+const AlertIcon = () => (
+  <svg style={icon} viewBox="0 0 24 24">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+    <line x1="12" y1="9" x2="12" y2="13"></line>
+    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+  </svg>
+);
+
+const LineChartIcon = () => (
+  <svg style={infoIcon} 
+  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+  >
+    <line x1="18" y1="20" x2="18" y2="10"></line>
+    <line x1="12" y1="20" x2="12" y2="4"></line>
+    <line x1="6" y1="20" x2="6" y2="14"></line>
+  </svg>
+);
+
+const CreditCardIcon = () => (
+  <svg style={infoIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+    <line x1="1" y1="10" x2="23" y2="10"></line>
+  </svg>
+);
+
+const ProgressBar = ({usagePrecent}) => {
+return (
+  <div style={progressBar}>
+    <div style={progressFill(usagePrecent)}></div>
+  </div>);
 };
 
 const main = {
@@ -298,4 +314,4 @@ NovuCreditUsageAlertEmail.PreviewProps = {
     }]
   } as NovuCreditUsageAlertEmailProps;
 
-export default NovuCreditUsageAlertEmail
+export default NovuCreditUsageAlertEmail;
