@@ -19,6 +19,7 @@ interface NovuExpiredCouponEmailProps {
   CouponDate?: Date;
   expiresInDays?: number;
   CouponName?: string;
+  LinkSupport?: string;
 }
 
 export const NovuExpiredCouponEmail = ({
@@ -26,6 +27,7 @@ export const NovuExpiredCouponEmail = ({
   CouponDate,
   expiresInDays,
   CouponName,
+  LinkSupport,
 }: NovuExpiredCouponEmailProps) => {
   let expiryDate;
   if (CouponDate) {
@@ -101,6 +103,13 @@ export const NovuExpiredCouponEmail = ({
                   If you lose the coupon or have any issues, feel free to visit
                   our support page.
                 </Text>
+                <Text style={{ ...paragraph, marginTop: 15 }}>
+                  For more assistance, visit our{" "}
+                  <a href={LinkSupport} style={linkStyle}>
+                      support page
+                  </a>.
+                </Text>
+
               </Column>
             </Row>
 
@@ -135,6 +144,7 @@ NovuExpiredCouponEmail.PreviewProps = {
   expiresInDays: 3,
   CouponDate: new Date("October 7, 2024, 10:58 am"),
   CouponName: "Birthday",
+  LinkSupport:"https://www.google.co.il/",
 } as NovuExpiredCouponEmailProps;
 
 export default NovuExpiredCouponEmail;
@@ -216,5 +226,9 @@ const boxInfos = {
 
 const containerImageFooter = {
   padding: "30px 0",
+};
+const linkStyle = {
+  color: "#e00707",
+  textDecoration: "none",
 };
 
