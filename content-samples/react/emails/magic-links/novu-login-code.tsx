@@ -27,7 +27,7 @@ export const NovuLoginCodeEmail = ({
 }: NovuLoginCodeEmailProps) => (
   <Html>
     <Head />
-    <Preview>Your login code for Novu</Preview>
+    <Preview>Your login code for Novu </Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
