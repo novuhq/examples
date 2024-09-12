@@ -48,21 +48,33 @@ const NovuCreditUsageAlertEmail = ({
           <Section style={iconContainer}>
             <AlertIcon/>
           </Section>
+          
           <Heading style={h1}>Credit Usage Alert</Heading>
           
           <Text style={text}>Hello {customerName},</Text>
           
-          <Text style={text}>
-            Thank you for using our services. We want to inform you that you have used <strong style={highlight}>{usagePrecent}%</strong> of your monthly credit.
-          </Text>
+          <Row style={{marginBottom: 10}}>
+            <Text style={{...text, display: 'inline'}}>
+              Thank you for using our services. We want to inform you that you have used
+            </Text>
+            <Text style={highlight}>{usagePrecent}%</Text>
+            <Text style={{...text, display: 'inline'}}>of your monthly credit.</Text>
+          </Row>
 
           <Section style={infoBox}>
-            <Head>
-              <LineChartIcon/>
-              <strong style={h2}>Your Credit Status</strong>
-            </Head>
+            <Row>
+              <Column width="24px">
+                <LineChartIcon/>
+              </Column>
+              <Column>
+                <Text style={h2}>Your Credit Status</Text>
+              </Column>
+            </Row>
             <ProgressBar usagePrecent={usagePrecent}/>
-            <Text style={text}>Credit used: <strong>{usage}/{amount}</strong></Text>
+            <Row>
+                <Text style={{...text, display: 'inline'}}>Credit used:</Text>
+                <Text style={highlight}>{usage}/{amount}</Text>
+            </Row>
           </Section>
 
           <Text style={text}>
@@ -70,10 +82,14 @@ const NovuCreditUsageAlertEmail = ({
           </Text>
 
           <Section style={infoBox}>
-            <Head>
-              <CreditCardIcon/>
-              <strong style={h2}>Purchase Additional Credits</strong>
-              </Head>
+              <Row>
+              <Column width="24px">
+                <CreditCardIcon/>
+              </Column>
+              <Column>
+                <Text style={h2}>Purchase Additional Credits</Text>
+              </Column>
+            </Row>
             <Text style={text}>Choose the package that suits you:</Text>
             <ul style={list}>
                 {
@@ -139,9 +155,7 @@ const AlertIcon = () => (
 );
 
 const LineChartIcon = () => (
-  <svg style={infoIcon} 
-  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-  >
+  <svg style={infoIcon} viewBox="0 0 24 24">
     <line x1="18" y1="20" x2="18" y2="10"></line>
     <line x1="12" y1="20" x2="12" y2="4"></line>
     <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -149,7 +163,7 @@ const LineChartIcon = () => (
 );
 
 const CreditCardIcon = () => (
-  <svg style={infoIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg style={infoIcon} viewBox="0 0 24 24">
     <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
     <line x1="1" y1="10" x2="23" y2="10"></line>
   </svg>
@@ -193,7 +207,8 @@ const h2 = {
   color: '#1f2937',
   fontWeight: 'bold',
   fontSize: '20px',
-  verticalAlign: 'middle'
+  verticalAlign: 'middle',
+  marginBottom: 0
 };
 
 const text = {
@@ -218,14 +233,21 @@ const infoBox: React.CSSProperties | undefined = {
   backgroundColor: '#FFF2FA',
   border: '1px solid #FF968A',
   borderRadius: '8px',
-  padding: '16px',
-  marginBottom: '24px',
+  padding: '0 16px 16px 16px',
+  marginBottom: '0 auto',
 };
 
-const infoIcon = {
+const infoIcon: React.CSSProperties | undefined = {
     marginRight: '8px',
     color: '#DA0685',
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    marginTop: "17px",
+    height: "24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
 };
 
 const progressBar = {
@@ -233,8 +255,7 @@ const progressBar = {
   backgroundColor: '#e5e7eb',
   borderRadius: '9999px',
   height: '16px',
-  marginBottom: '8px',
-  marginTop: '8px'
+  margin: '8px 0'
 };
 
 const progressFill = (usagePrecent: number) => ({
@@ -250,7 +271,6 @@ const button = {
   color: '#ffffff',
   fontSize: '16px',
   fontWeight: 'bold',
-  textDecoration: 'none',
   textAlign: 'center' as const,
   display: 'block',
   padding: '12px 16px',
@@ -279,7 +299,6 @@ const companyDetails = {
 
 const link = {
   color: '#3b82f6',
-  textDecoration: 'none',
 };
 
 const list = {
@@ -289,8 +308,11 @@ const list = {
 };
 
 const highlight = {
+  ...text,
   color: '#DA3688',
   fontWeight: 'bold',
+  display: 'inline',
+  margin: "5px",
 };
 
 NovuCreditUsageAlertEmail.PreviewProps = {
