@@ -2,24 +2,18 @@ import {
   Body,
   Button,
   Container,
-  Column,
   Head,
   Heading,
   Html,
   Img,
   Link,
   Preview,
-  Row,
   Section,
   Text,
 } from "@react-email/components";
 import * as React from "react";
 
 
-/*
-1. based on your intrestes we send you our new products
-2. order status
-*/
 interface OrderStatusEmailProps {
   username?: string;
   orderId?: string;
@@ -47,12 +41,9 @@ export const OrderStatusEmail = ({
             Your order #{orderId} has been {orderStatus}!
           </Text>
 
-          <Img
+          <Img style={img}
             src={"https://cdn-icons-png.flaticon.com/512/65/65998.png"}
-            width="60%"
-            height="auto"
             alt={`Image of ${orderStatus}`}
-            style={{ marginBottom: "20px", display: "block", margin: "0 auto", borderRadius: "10px" }} // Add rounded corners
           />
           <Button style={button} href={orderLink}>
             View Order Details
@@ -93,6 +84,16 @@ const section = {
   backgroundColor: "#fdfdfd",
   boxShadow: "0 6px 15px rgba(0, 0, 0, 0.05)",
 };
+
+const img = {
+  marginBottom: "20px",
+  display: "block",
+  margin: "0 auto",
+  borderRadius: "10px",
+  width: "60%",
+  height: "auto",
+};
+
 
 const links = {
   textAlign: "center" as const,
