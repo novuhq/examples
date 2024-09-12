@@ -50,7 +50,7 @@ export const WeeklySalesEmail = ({ items = [], storeLink }: WeeklySalesEmailProp
 
                     <Text style={links}>
                         <Link style={link} href="#">Browse our full selection</Link> ・{" "}
-                        <Link style={link} href="#">CNeed help? Contact us!</Link>
+                        <Link style={link} href="#">Need help? Contact us!</Link>
                     </Text>
 
                     <Text style={footer}>
