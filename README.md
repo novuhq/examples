@@ -4,13 +4,17 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/2233092/213641039-220ac15f-f367-4d13-9eaf-56e79433b8c1.png">
     <img alt="Novu Logo" src="https://user-images.githubusercontent.com/2233092/213641043-3bbb3f21-3c53-4e67-afe5-755aeb222159.png" width="280"/>
+
   </picture>
+  
   </a>
 </div>
 
 <br/>
 
 <p align="center">
+
+
   <a href="https://www.npmjs.com/package/@novu/node">
     <img src="https://img.shields.io/npm/v/@novu/node" alt="NPM">
   </a>
@@ -19,7 +23,6 @@
   </a>
   <img src="https://img.shields.io/github/license/novuhq/novu" alt="MIT">
 </p>
-
 <h1 align="center">The open-source notification infrastructure for developers</h1>
 
 <div align="center">
