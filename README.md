@@ -23,7 +23,6 @@
   </a>
   <img src="https://img.shields.io/github/license/novuhq/novu" alt="MIT">
 </p>
-  <img width="406" alt="birthday" src="https://github.com/user-attachments/assets/1ba55754-22d6-4b5b-b365-f9e8ca54e3d4">
 <h1 align="center">The open-source notification infrastructure for developers</h1>
 
 <div align="center">
