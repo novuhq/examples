@@ -145,20 +145,24 @@ const subheading = {
   margin: "0 0 20px",
 };
 
+const productsTable = {
+  display: 'flex',
+  ustifyContent: 'center'
+}
 
 const productRow = {
   display: 'grid',
   justifyContent: 'center',
   alignItems: 'flex-start',
-  margin: '0 0 20px',
+  paddingLeft: '3%',
   gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)'
 };
 
 const productColumn = {
   verticalAlign: 'top',
   width: '50%',
-  padding: '0 10px',
-  boxSizing: 'content-box' as const,
+  padding: '0 40px',
+  boxSizing: 'border-box' as const,
   overflow: 'hidden',
   textOverflow: 'ellipsis'
 };
