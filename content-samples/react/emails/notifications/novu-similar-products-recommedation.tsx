@@ -58,7 +58,7 @@ export const NovuAddToCartAlert = ({
               We've hand-picked some items we think you'll love:
             </Text>
 
-            <Section style={productTable}>
+            <Section>
               <Row style={productRow}>
                 {productList.slice(0, 2).map((product, index) => (
                   <Column key={index} style={productColumn}>
@@ -144,16 +144,13 @@ const subheading = {
   lineHeight: "26px",
   margin: "0 0 20px",
 };
-const productTable = {
-    tableLayout: 'fixed'
 
-}
+
 const productRow = {
   display: 'grid',
   justifyContent: 'center',
   alignItems: 'flex-start',
   margin: '0 0 20px',
-  width: '100%',
   gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)'
 };
 
