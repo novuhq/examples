@@ -155,6 +155,7 @@ const productRow = {
 };
 
 const productColumn = {
+  verticalAlign: 'top',
   width: '50%',
   padding: '0 10px',
   boxSizing: 'content-box' as const,
@@ -163,7 +164,6 @@ const productColumn = {
 };
 
 const imageStyle = {
-  display: 'block',
   marginLeft: 'auto',
   marginRight: 'auto',
   width: "182px",
