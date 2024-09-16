@@ -86,7 +86,7 @@ export const NovuJobAlertEmail = ({
           })}
         </Section>
         <Section style={centerBtnContainer}>
-          <Button style={button} href="https://getkoala.com">
+          <Button style={primaryBtn} href="https://getkoala.com">
             See more jobs
           </Button>
         </Section>
@@ -96,7 +96,7 @@ export const NovuJobAlertEmail = ({
               <Text style={header3}>Looking for something else?</Text>
             </Column>
             <Column style={rightBtnContainer}>
-              <Button style={button} href="https://getkoala.com">
+              <Button style={secondaryBtn} href="https://getkoala.com">
                 Edit job alert
               </Button>
             </Column>
@@ -215,7 +215,7 @@ const rightBtnContainer = {
   textAlign: "right" as const,
 };
 
-const button = {
+const primaryBtn = {
   backgroundColor: "#5F51E8",
   borderRadius: "3px",
   color: "#fff",
@@ -224,6 +224,20 @@ const button = {
   margin: "10px 0",
   padding: "12px",
 };
+
+const secondaryBtn = {
+  borderColor: "#5F51E8",
+  borderWidth: "3px",
+  borderStyle: "solid",
+  borderRadius: "5px",
+  color: "#5F51E8",
+
+  fontSize: "16px",
+  textAlign: "center" as const,
+  margin: "10px 0",
+  padding: "12px",
+};
+
 
 const hr = {
   borderColor: "#cccccc",
