@@ -145,11 +145,6 @@ const subheading = {
   margin: "0 0 20px",
 };
 
-const productsTable = {
-  display: 'flex',
-  ustifyContent: 'center'
-}
-
 const productRow = {
   display: 'grid',
   justifyContent: 'center',
