@@ -14,7 +14,7 @@ import {
   } from "@react-email/components";
   import * as React from "react";
   
-  interface NovuRecentLoginEmailProps {
+  interface NovuBirthdayCouponProps {
     userFirstName?: string;
     couponDate?: Date;
     discountAmount?: string;
@@ -25,13 +25,13 @@ import {
     ? `https://${process.env.VERCEL_URL}`
     : "";
   
-  export const NovuRecentLoginEmail = ({
+  export const NovuBirthdayCoupon = ({
     userFirstName,
     discountAmount,
     couponDate,
     validationCode,
 
-  }: NovuRecentLoginEmailProps) => {
+  }: NovuBirthdayCouponProps) => {
     const formattedDate = new Intl.DateTimeFormat("en", {
       dateStyle: "long",
       timeStyle: "short",
@@ -133,7 +133,7 @@ import {
   NovuRecentLoginEmail.PreviewProps = {
     userFirstName: "Alan",
     discountAmount: "10",
-    loginDate: new Date("September 7, 2022, 10:58 am"),
+    loginDate: new Date("September 30, 2024, 00:00 am"),
     validationCode: "HPY-BDY",
   } as NovuRecentLoginEmailProps;
   
