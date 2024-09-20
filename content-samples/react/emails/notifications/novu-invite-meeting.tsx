@@ -22,92 +22,6 @@ interface MeetingInviteEmailProps {
     location?: string;
     subject?: string;
 }
-
-// Custom Styles
-const main = {
-    backgroundColor: "#fff",  
-    fontFamily:
-        '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
-
-const paragraph = {
-    fontSize: 16, 
-};
-
-const logo = {
-    padding: "30px 20px",  
-};
-
-const containerButton = {
-    display: "flex",
-    justifyContent: "center",  
-    width: "100%",
-    gap: "10px",  
-};
-
-const button = {
-    borderRadius: 3,
-    color: "#FFF",  
-    fontWeight: "bold",
-    border: "1px solid rgb(0,0,0, 0.1)",  // Slight border for contrast
-    cursor: "pointer",
-    padding: "12px 30px",  // Button padding for a larger click area
-    textAlign: "center", 
-};
-
-const buttonYes = {
-    ...button,
-    backgroundImage: "linear-gradient(90deg, #e91e63, #f44336)",  // Gradient for 'Yes' button
-};
-
-const buttonMaybe = {
-    ...button,
-    backgroundImage: "linear-gradient(90deg, #fcb045, #fd1d1d)",  // Gradient for 'Maybe' button
-};
-
-const buttonNo = {
-    ...button,
-    backgroundImage: "linear-gradient(90deg, #f44336, #e91e63)",  // Gradient for 'No' button
-};
-
-const content = {
-    border: "1px solid rgb(0,0,0, 0.1)",  // Border around the main content
-    borderRadius: "3px",
-    overflow: "hidden",
-};
-
-const image = {
-    maxWidth: "100%",  
-};
-
-const boxInfos = {
-    padding: "20px",  
-};
-
-const containerImageFooter = {
-    padding: "45px 0 0 0",  
-};
-
-const rowContainer = {
-    display: "flex",
-    justifyContent: "space-between",  
-    alignItems: "flex-start", 
-};
-
-const dateCard = {
-    backgroundColor: "#f9f9f9",  
-    borderRadius: "8px",
-    padding: "20px",
-    margin: "20px 0",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",  
-    width: "25%",  // Date card width
-};
-
-const mainContentColumn = {
-    paddingLeft: "20px",
-    width: "70%",  // Main content width
-};
-
 export const MeetingInviteEmail = ({
     meetingTitle,
     meetingDate,
@@ -119,15 +33,14 @@ export const MeetingInviteEmail = ({
     const formattedDate = new Intl.DateTimeFormat("en", {
         dateStyle: "full",
         timeStyle: "short",
-    }).format(meetingDate);  // Format meeting date
-
+    }).format(meetingDate);  
     return (
         <Html>
             <Head />
             <Preview>{meetingTitle || "Meeting Invitation"}</Preview>
             <Body style={main}>
                 <Container>
-                    {/* NOVU Logo */}
+                    
                     <Section style={logo}>
                         <Img
                             src={`https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down`}
@@ -136,7 +49,7 @@ export const MeetingInviteEmail = ({
                         />
                     </Section>
 
-                    {/* Invitation Content */}
+                    
                     <Section style={content}>
                         <Row>
                             <Img
@@ -147,15 +60,15 @@ export const MeetingInviteEmail = ({
                             />
                         </Row>
 
-                        {/* Date Card and Main Content */}
+                        
                         <Row style={rowContainer}>
-                            {/* Date Card */}
+                            
                             <Column style={dateCard}>
                                 <Heading style={{ fontSize: 24, textAlign: "center" }}>Meeting Date</Heading>
                                 <Text style={{ fontSize: 20, textAlign: "center" }}>{formattedDate}</Text>
                             </Column>
 
-                            {/* Main Content */}
+                            
                             <Column style={mainContentColumn}>
                                 <Row style={boxInfos}>
                                     <Column>
@@ -235,3 +148,88 @@ MeetingInviteEmail.PreviewProps = {
 } as MeetingInviteEmailProps;
 
 export default MeetingInviteEmail;
+
+
+const main = {
+    backgroundColor: "#fff",  
+    fontFamily:
+        '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+};
+
+const paragraph = {
+    fontSize: 16, 
+};
+
+const logo = {
+    padding: "30px 20px",  
+};
+
+const containerButton = {
+    display: "flex",
+    justifyContent: "center",  
+    width: "100%",
+    gap: "10px",  
+};
+
+const button = {
+    borderRadius: 3,
+    color: "#FFF",  
+    fontWeight: "bold",
+    border: "1px solid rgb(0,0,0, 0.1)",  
+    cursor: "pointer",
+    padding: "12px 30px", 
+    textAlign: "center", 
+};
+
+const buttonYes = {
+    ...button,
+    backgroundImage: "linear-gradient(90deg, #e91e63, #f44336)",  
+};
+
+const buttonMaybe = {
+    ...button,
+    backgroundImage: "linear-gradient(90deg, #fcb045, #fd1d1d)", 
+};
+
+const buttonNo = {
+    ...button,
+    backgroundImage: "linear-gradient(90deg, #f44336, #e91e63)",  
+};
+
+const content = {
+    border: "1px solid rgb(0,0,0, 0.1)",  
+    borderRadius: "3px",
+    overflow: "hidden",
+};
+
+const image = {
+    maxWidth: "100%",  
+};
+
+const boxInfos = {
+    padding: "20px",  
+};
+
+const containerImageFooter = {
+    padding: "45px 0 0 0",  
+};
+
+const rowContainer = {
+    display: "flex",
+    justifyContent: "space-between",  
+    alignItems: "flex-start", 
+};
+
+const dateCard = {
+    backgroundColor: "#f9f9f9",  
+    borderRadius: "8px",
+    padding: "20px",
+    margin: "20px 0",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",  
+    width: "25%",  
+};
+
+const mainContentColumn = {
+    paddingLeft: "20px",
+    width: "70%",  
+};
