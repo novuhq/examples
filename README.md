@@ -36,11 +36,11 @@ The ultimate service for managing multi-channel notifications with a single API.
   ·
   <a href="https://github.com/novuhq/novu/issues/new?assignees=&labels=feature&template=feature_request.yml&title=%F0%9F%9A%80+Feature%3A+">Request Feature</a>
   ·
-<a href="https://discord.novu.co">Join Our Discord</a>
+  <a href="https://discord.novu.co">Join Our Discord</a>
   ·
   <a href="https://roadmap.novu.co">Roadmap</a>
   ·
   <a href="https://twitter.com/novuhq">X</a>
   ·
-  <a href="https://notifications.directory">Notifications Directory</a>
+  <a href="https://www.recent.dev">Recent.dev</a>
 </p>
